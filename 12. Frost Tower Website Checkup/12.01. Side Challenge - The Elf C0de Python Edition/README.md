@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-## 12. Frost Tower Website Checkup
+## 12. [Frost Tower Website Checkup](/12.%20Frost%20Tower%20Website%20Checkup/README.md)
 
 ### 12.1. Side Challenge - The Elf C0de Python Edition
 
@@ -8,7 +8,6 @@
 **Bumping into Walls** - *Ribb Bonbowford*: “Looping through long movements? Don't be afraid to moveUp(99) or whatever. You elf will stop at any obstacle.”  
 **Moving the Elf** - *Ribb Bonbowford*: “You can move the elf with commands like elf.moveLeft(5), elf.moveTo({"x":2,"y":2}), or elf.moveTo(lever0.position).”  
 **Lever Requirements** - *Ribb Bonbowford*: “Not sure what a lever requires? Click it in the Current Level Objectives panel.”  
-
 #### 12.1.1. Solution
 ##### 12.1.0. Level 0
 ```python
@@ -168,7 +167,7 @@ elf.moveUp(100)
 
 #### 12.2. Level 8 @ KringleCon3
 This year I didn’t come up with any weird solution for this challenge but you can still insult [my Level 8 solution](https://github.com/LamonatoAndrea/KringleCon3/blob/main/04.%20Operate%20the%20Santavator/README.md#418-level-8) from last year.  
-![meme](meme.png)
+![meme](imgs/meme.png)
 
 ---
 ## [2. Where in the World is Caramel Santiaigo?](README.md)
