@@ -1,6 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 3. Thaw Frost Tower's Entrance
-## 3.0. Description
+# 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 
 ## [3.1. Side Challenge - Grepping for Gold](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata)
 
@@ -46,7 +45,7 @@ This looks for "34.76.1.22" in the bigscan.gnmap file and shows us every place w
 This tells us port TCP 62078 was found open by nmap.
 You have 5 challenges left.
 ```
-Answer is: 62078
+Answer is: `62078`
 
 ### 3.1.1.1. What port does 34.77.207.226 have open?
 I used grep to search the host and checked the output:
@@ -65,7 +64,7 @@ Like the previous challenge, this searches the nmap output file for a specific I
   8080/open/tcp//http-proxy///
 You have 4 challenges left.
 ```
-Answer is: 8080
+Answer is: `8080`
 
 ### 3.1.1.2. How many hosts appear "Up" in the scan?
 The last line of a nmap scan file is generally the summary of hosts scanned, so `tail` did the trick:
@@ -82,7 +81,7 @@ grep Up bigscan.gnmap | wc -l
 Running the grep part of the command returns every line with "Up" in it, and wc counts the bytes, characters, words, and lines that come out of grep. Using "-l" only shows lines.
 You have 3 challenges left.
 ```
-Answer is: 26054
+Answer is: `26054`
 
 ### 3.1.1.3. How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
 I used grep to search for a regex containing target ports:
@@ -100,7 +99,7 @@ Using "-E" tells grep we"re giving it a regular expression (regex).  In this cas
   If you want to be MORE correct, you might use "(\s8080|\s443|\s80)/open" to ensure you don't snag ports like 50080, but there weren't any in this file.
 You have 2 challenges left.
 ```
-Answer is: 14372
+Answer is: `14372`
 
 ### 3.1.1.4. How many hosts with status Up have no (detected) open TCP ports?
 I did two temporary files, one with all the IP addresses of hosts with "Status: Up" and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using bash: 
@@ -119,7 +118,7 @@ echo $((`grep Up bigscan.gnmap | wc -l` - `grep Ports bigscan.gnmap | wc -l`))
 Our solution is a little fancy, but the crux is this: use one grep|wc command to count how many hosts are "Up", and use another to count how many have "Ports" open.
 You have 1 challenge left.
 ```
-Answer is: 402
+Answer is: `402`
 
 ### 3.1.1.5. What's the greatest number of TCP ports any one host has open?
 Assuming the longest line of the file would pretty accurately indicate the host with most ports opened, I used `grep` and `wc` to find that line, then I counted ports:
@@ -138,7 +137,7 @@ One crafty tester employed the mighty powers of awk like this:
   awk 'BEGIN {print}{print gsub(/open/,"") ""}' bigscan.gnmap | sort -nr | head -1
 You've done it!
 ```
-Answer is: 12
+Answer is: `12`
 
 ---
 # [2. Where in the World is Caramel Santiaigo?](README.md)
