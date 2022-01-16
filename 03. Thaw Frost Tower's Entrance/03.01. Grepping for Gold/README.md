@@ -1,13 +1,13 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
+## 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 
-## 3.1. Side Challenge - Grepping for Gold
+### 3.1. Side Challenge - Grepping for Gold
 The objective is to extract information from an nmap scan using grep.
 
-## 3.1.0. Hints
+### 3.1.0. Hints
 **Grep Cheat Sheet** - *Greasy GopherGuts*: “Check [this](https://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php) out if you need a grep refresher.”
 
-## 3.1.1. Solution
+### 3.1.1. Solution
 The motd of this terminal is:
 ```bash
 Howdy howdy!  Mind helping me with this homew- er, challenge?
@@ -28,7 +28,7 @@ Check out bigscan.gnmap and type quizme to answer each question.
 
 Below the full output.
 
-### 3.1.1.0. What port does 34.76.1.22 have open?
+#### 3.1.1.0. What port does 34.76.1.22 have open?
 I used grep to search the host and checked the output:
 ```bash
 elf@0227bf6380ca:~$ grep "34.76.1.22" bigscan.gnmap 
@@ -48,7 +48,7 @@ You have 5 challenges left.
 ```
 Answer is: `62078`
 
-### 3.1.1.1. What port does 34.77.207.226 have open?
+#### 3.1.1.1. What port does 34.77.207.226 have open?
 I used grep to search the host and checked the output:
 ```bash
 elf@3a26e5a3624b:~$ grep "34.77.207.226" bigscan.gnmap 
@@ -67,11 +67,11 @@ You have 4 challenges left.
 ```
 Answer is: `8080`
 
-### 3.1.1.2. How many hosts appear "Up" in the scan?
+#### 3.1.1.2. How many hosts appear "Up" in the scan?
 The last line of a nmap scan file is generally the summary of hosts scanned, so `tail` did the trick:
 ```bash
 elf@3a26e5a3624b:~$ tail -n 1 bigscan.gnmap 
-# Nmap done at Fri Jul 26 12:4:23 -- 26054 IP addresses (26054 hosts up) scanned in 431.78 seconds
+## Nmap done at Fri Jul 26 12:4:23 -- 26054 IP addresses (26054 hosts up) scanned in 431.78 seconds
 
 elf@3a26e5a3624b:~$ quizme
 How many hosts appear "Up" in the scan?
@@ -84,7 +84,7 @@ You have 3 challenges left.
 ```
 Answer is: `26054`
 
-### 3.1.1.3. How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
+#### 3.1.1.3. How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
 I used grep to search for a regex containing target ports:
 ```bash
 elf@3a26e5a3624b:~$ grep -e "Ports:.*\?80\|8080\|443.*\?I" bigscan.gnmap | wc -l
@@ -102,7 +102,7 @@ You have 2 challenges left.
 ```
 Answer is: `14372`
 
-### 3.1.1.4. How many hosts with status Up have no (detected) open TCP ports?
+#### 3.1.1.4. How many hosts with status Up have no (detected) open TCP ports?
 I did two temporary files, one with all the IP addresses of hosts with "Status: Up" and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using bash: 
 ```bash
 elf@3a26e5a3624b:~$ grep "Status: Up" bigscan.gnmap | cut -d " " -f 2 > host_up
@@ -121,7 +121,7 @@ You have 1 challenge left.
 ```
 Answer is: `402`
 
-### 3.1.1.5. What's the greatest number of TCP ports any one host has open?
+#### 3.1.1.5. What's the greatest number of TCP ports any one host has open?
 Assuming the longest line of the file would pretty accurately indicate the host with most ports opened, I used `grep` and `wc` to find that line, then I counted ports:
 ```bash
 elf@3a26e5a3624b:~$ grep -Em1 "^.{$(wc -L <bigscan.gnmap)}\$" bigscan.gnmap 
@@ -141,35 +141,35 @@ You've done it!
 Answer is: `12`
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](/README.md)
-# [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](/README.md#17-narrative)
-# [18. Conclusions](/README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](/README.md)
+## [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](/README.md#17-narrative)
+## [18. Conclusions](/README.md#18-conclusions)

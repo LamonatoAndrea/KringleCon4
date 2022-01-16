@@ -1,17 +1,17 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 9. Splunk!
-## 9.0. Description
+## 9. Splunk!
+### 9.0. Description
 Difficulty: :christmas_tree::christmas_tree::christmas_tree:  
 Help Angel Candysalt solve the Splunk challenge in Santa's great hall. Fitzy Shortstack is in Santa's lobby, and he knows a few things about Splunk. What does Santa call you when when you complete the analysis?
 
-## 9.1. [Side Challenge - Yara Analysis](/09.%20Splunk!/09.01.%20Yara%20Analisys/README.md)
+### 9.1. [Side Challenge - Yara Analysis](/09.%20Splunk!/09.01.%20Yara%20Analisys/README.md)
 
-## 9.2. Hints
+### 9.2. Hints
 **Malicious NetCat??** - *Fitzy Shortstack*: “Did you know there are multiple versions of the Netcat command that can be used maliciously? nc.openbsd, for example.”  
 **Sysmon Monitoring in Splunk** - *Fitzy Shortstack*: “Sysmon network events don't reveal the process parent ID for example. Fortunately, we can pivot with a query to investigate process creation events once you get a process ID.”  
 **GitHub Monitoring in Splunk** - *Fitzy Shortstack*: “Between GitHub audit log and webhook event recording, you can monitor all activity in a repository, including common git commands such as git add, git status, and git commit.”  
 
-## 9.3. Solution
+### 9.3. Solution
 Santa's To-Do List
  1. Your goal is to complete the eight tasks below.
  2. When you complete the final task, you will see a special message to paste into your KringleCon Badge.
@@ -21,7 +21,7 @@ Santa's To-Do List
  6. This challenge is designed for a laptop or desktop computer with screen width of 1600 pixels or more.
  7. WARNING This is a defensive challenge. Do not attack this system, Splunk, Splunk apps, or back-end APIs. Thank you!
 
-### 9.3.0. Task 1
+#### 9.3.0. Task 1
 Capture the commands Eddie ran most often, starting with git. Looking only at his process launches as reported by Sysmon, record the most common git-related CommandLine that Eddie seemed to use.
 
 Using the available query "Sysmon for Linux - Using Splunk stats and sort commands to find most/least common value of a field." :
@@ -46,7 +46,7 @@ Result:
 Answer:
 git status
 
-### 9.3.1. Task 2
+#### 9.3.1. Task 2
 Looking through the git commands Eddie ran, determine the remote repository that he configured as the origin for the 'partnerapi' repo. The correct one!
 
 Query:
@@ -65,7 +65,7 @@ index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operatio
 Answer:
 git@github.com:elfnp3/partnerapi.git
 
-### 9.3.2. Task 3
+#### 9.3.2. Task 3
 Eddie was running Docker on his workstation. Gather the full command line that Eddie used to bring up a the partnerapi project on his workstation.
 
 Query:
@@ -85,7 +85,7 @@ Results:
 Answer:
 docker compose up
 
-### 9.3.3. Task 4
+#### 9.3.3. Task 4
 Eddie had been testing automated static application security testing (SAST) in GitHub. Vulnerability reports have been coming into Splunk in JSON format via GitHub webhooks. Search all the events in the main index in Splunk and use the sourcetype field to locate these reports. Determine the URL of the vulnerable GitHub repository that the elves cloned for testing and document it here. You will need to search outside of Splunk (try GitHub) for the original name of the repository.
 
 Query:
@@ -108,7 +108,7 @@ Damn Vulnerable Web Service is a Damn Vulnerable Insecure API/Web Service. This 
 Answer:
 https://github.com/snoopysecurity/dvws-node
 
-### 9.3.4. Task 5
+#### 9.3.4. Task 5
 Santa asked Eddie to add a JavaScript library from NPM to the 'partnerapi' project. Determine the name of the library and record it here for our workshop documentation.
 
 Query:
@@ -128,7 +128,7 @@ Results:
 Answer:
 holiday-utils-js
 
-### 9.3.5. Task 6
+#### 9.3.5. Task 6
 Another elf started gathering a baseline of the network activity that Eddie generated. Start with their search ( https://hhc21.bossworkshops.io/en-US/app/SA-hhc/search?q=search%20index%3Dmain%20sourcetype%3Djournald%20source%3DJournald%3AMicrosoft-Windows-Sysmon%2FOperational%20EventCode%3D3%20user%3Deddie%20NOT%20dest_ip%20IN%20(127.0.0.*)%20NOT%20dest_port%20IN%20(22%2C53%2C80%2C443)%20%0A%7C%20stats%20count%20by%20dest_ip%20dest_port&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=0&latest=now ) and capture the full process_name field of anything that looks suspicious.
 
 Query:
@@ -150,7 +150,7 @@ The nc command looks malicious as it opens a connection to an external AWS serve
 Answer:
 /usr/bin/nc.openbsd
 
-### 9.3.6. Task 7
+#### 9.3.6. Task 7
 Uh oh. This documentation exercise just turned into an investigation. Starting with the process identified in the previous task, look for additional suspicious commands launched by the same parent process. One thing to know about these Sysmon events is that Network connection events don't indicate the parent process ID, but Process creation events do! Determine the number of files that were accessed by a related process and record it here.
 
 Query1:
@@ -204,7 +204,7 @@ The lazy result:
 Answer:
 6
 
-### 9.3.7. Task 8
+#### 9.3.7. Task 8
 Use Splunk and Sysmon Process creation data to identify the name of the Bash script that accessed sensitive files and (likely) transmitted them to a remote IP address.
 
 Query:
@@ -221,40 +221,40 @@ Result:
 Answer:
 preinstall.sh
 
-### 9.3.8. What does Santa call you when when you complete the analysis?
+#### 9.3.8. What does Santa call you when when you complete the analysis?
 Thank you for helping Santa complete his investigation! Santa says you're a **whiz**!
 ![Whiz](imgs/Whiz.png)
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](../README.md)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](../README.md#17-narrative)
-# [18. Conclusions](../README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](../README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](../README.md#17-narrative)
+## [18. Conclusions](../README.md#18-conclusions)

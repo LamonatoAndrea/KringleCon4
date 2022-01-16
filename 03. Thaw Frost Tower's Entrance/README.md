@@ -1,17 +1,17 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 3. Thaw Frost Tower's Entrance
-## 3.0. Description
+## 3. Thaw Frost Tower's Entrance
+### 3.0. Description
 Difficulty: :christmas_tree::christmas_tree:  
 Turn up the heat to defrost the entrance to Frost Tower. Click on the Items tab in your badge to find a link to the Wifi Dongle's CLI interface. Talk to Greasy Gopherguts outside the tower for tips.
 
-## 3.1. [Side Challenge - Grepping for Gold](/03.%20Thaw%20Frost%20Tower's%20Entrance/03.01.%20Grepping%20for%20Gold/README.md)
+### 3.1. [Side Challenge - Grepping for Gold](/03.%20Thaw%20Frost%20Tower's%20Entrance/03.01.%20Grepping%20for%20Gold/README.md)
 
-## 3.2. Hints
+### 3.2. Hints
 **Adding Data to cURL requests** - *Greasy GopherGuts*: “When sending a [POST request with data](https://www.educative.io/edpresso/how-to-perform-a-post-request-using-curl), add --data-binary to your curl command followed by the data you want to send.”  
 **Web Browsing with cURL** - *Greasy GopherGuts*: “[cURL,](https://linux.die.net/man/1/curl) makes HTTP requests from a terminal - in Mac, Linux, and modern Windows!”  
 **Linux Wi-Fi Commands** - *Greasy GopherGuts*: “The [iwlist](https://linux.die.net/man/8/iwlist) and [iwconfig](https://linux.die.net/man/8/iwconfig) utilities are key for managing Wi-Fi from the Linux command line.”  
 
-## 3.3. Solution
+### 3.3. Solution
 For this challenge the "Wifi Dongle" from Objective 1 is going to be used. The motd of the tool is:
 ```
                         ATTENTION ALL ELVES
@@ -208,35 +208,35 @@ elf@588b89ef0d85:~$ curl -XPOST -H 'Content-Type: application/json' \
 The full terminal output is available [here](/03.%20Thaw%20Frost%20Tower's%20Entrance/Thaw%20Frost%20Tower's%20Entrance.txt).
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](/README.md)
-# [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](/README.md#17-narrative)
-# [18. Conclusions](/README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](/README.md)
+## [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](/README.md#17-narrative)
+## [18. Conclusions](/README.md#18-conclusions)

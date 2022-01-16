@@ -1,7 +1,7 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 9. [Splunk!](/09.%20Splunk!/README.md)
+## 9. [Splunk!](/09.%20Splunk!/README.md)
 
-## 9.1. Side Challenge - Yara Analysis
+### 9.1. Side Challenge - Yara Analysis
 The objective is to allow execution of `the_critical_elf_app` even though it triggers some predefined Yara rules.
 
 The motd of this terminal is:
@@ -23,7 +23,7 @@ vim, emacs, nano, yara, and xxd
 The children will be very disappointed if their candy won't even cause a single cavity.
 ```
 
-### 9.1.0. yara_rule_135
+#### 9.1.0. yara_rule_135
 The first rules that triggers is `yara_rule_135`:
 ```bash
 snowball2@2b442252ab9b:~$ ./the_critical_elf_app 
@@ -54,7 +54,7 @@ It is possible to find the string and replace it in a hex editor:
 00002010: 6500 6e61 7567 6874 7920 7374 7269 6e67  e.naughty string
 ```
 
-### 9.1.1. yara_rule_1056
+#### 9.1.1. yara_rule_1056
 The second rules that triggers is `yara_rule_1056`:
 ```bash
 snowball2@2b442252ab9b:~$ ./the_critical_elf_app 
@@ -101,7 +101,7 @@ As I didn't feel too safe altering a `libc` reference I modified the second stri
 00002060: 486f 6c69 6461 7948 6163 6b43 6861 6c6c  HolidayHackChall
 ```
 
-### 9.1.2. yara_rule_1732
+#### 9.1.2. yara_rule_1732
 The third rules that triggers is `yara_rule_1732`:
 ```bash
 snowball2@ad2b9bc1bb62:~$ ./the_critical_elf_app
@@ -144,11 +144,11 @@ rule yara_rule_1732 {
 ```
 With the same approach, I solved the challenge modifiyng the hex content of the file manually with `vim`, trying not to break its execution.
 
-### 9.1.4. Summary of changes
+#### 9.1.4. Summary of changes
 Below the diff between the original file (green) and the tampered one (red):  
 ![summary](imgs/YaraAnalisys.PNG)
 
-### 9.1.5. Execution
+#### 9.1.5. Execution
 Finally the app was able to execute:
 ```bash
 snowball2@94dc8af0fac8:~$ ./the_critical_elf_app 
@@ -160,35 +160,35 @@ Elf Jolliness Quotient: 4a6f6c6c7920456e6f7567682c204f76657274696d6520417070726f
 ```
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](../README.md)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](../README.md#17-narrative)
-# [18. Conclusions](../README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](../README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](../README.md#17-narrative)
+## [18. Conclusions](../README.md#18-conclusions)

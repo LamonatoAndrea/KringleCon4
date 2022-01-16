@@ -39,39 +39,39 @@ _____....-//___|  \_\  |  |=====| |   |_|_\\      |___\\
  '._____.'                            .     '._____.'                   
 ```
 ### 0.0. [The ship source](https://www.asciiart.eu/space/spaceships)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 
-# 16. That’s how Jack came from space
+## 16. That’s how Jack came from space
 This chapter is here just to embed a huge spaceship image!
 ![ship1](imgs/00_ship1.png)
 
-# 17. Narrative
+## 17. Narrative
 Listen children to a story that was written in the cold
 
 'Bout a Kringle and his castle hosting hackers, meek and bold
@@ -112,7 +112,7 @@ There won't be any retweets praising you, come disclosure day
 
 But on the snowy evening after? Still Kris Kringle rides the sleigh
 
-# 18. Conclusions
+## 18. Conclusions
 I have kind of a feeling that this report is bad, so here you have some bad report meme:
 ![https://makeameme.org/meme/not-sure-if-dad47be475](imgs/01_presentation_finished.jpg)
 https://makeameme.org/meme/not-sure-if-dad47be475

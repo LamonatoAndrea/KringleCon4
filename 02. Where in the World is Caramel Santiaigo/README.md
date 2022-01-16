@@ -1,17 +1,17 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 2. Where in the World is Caramel Santiaigo?
-## 2.0. Description
+## 2. Where in the World is Caramel Santiaigo?
+### 2.0. Description
 Difficulty: :christmas_tree::christmas_tree:  
 Help Tangle Coalbox find a wayward elf in Santa's courtyard. Talk to Piney Sappington nearby for hints
 
-## 2.1. [Side Challenge - Exif Metadata](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata)
+### 2.1. [Side Challenge - Exif Metadata](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata)
 
-## 2.2. Hints
+### 2.2. Hints
 **Flask Cookies** - *Piney Sappington*: “While Flask cookies can't generally be forged without the secret, they can often be decoded and read.”  
 **OSINT Talk** - *Piney Sappington*: “Clay Moody is giving a talk about OSINT techniques right now!”  
 **Coordinate Systems** - *Piney Sappington*: “Don't forget coordinate systems other than lat/long like MGRS and what3words.”  
 
-## 2.3. Solution
+### 2.3. Solution
 The objective is to find where is Caramel Santiago by following the hints provided:
 | **LOCATION** | **HINT** | **EXPLANATION** |
 |--------------|----------|-----------------|
@@ -27,13 +27,13 @@ The objective is to find where is Caramel Santiago by following the hints provid
 
 Ended up in **Edinburgh, Scotland** with **Ribb Bonbowford**.
 
-## 2.4. Scraping for fun
+### 2.4. Scraping for fun
 
-### 2.4.0 The spider script
+#### 2.4.0 The spider script
 I wrote a python script named ["spider.py"](spider/spider.py) to retrieve data about Locations and Hints. It plays the game, always losing, while tracking in a Sqlite DB all data and downloading images. After a certain number of games without adding anything to the DB it stops.  
 The [log of the execution](spider/spider.log) and [the database](spider/caramel.db) are also available.
 
-### 2.4.0.0. Locations
+#### 2.4.0.0. Locations
 Below all the cities a user may travel to:
 | **NAME** | **DESCRIPTION** | **IMAGE** |
 | -------- | --------------- | --------- |
@@ -51,7 +51,7 @@ Below all the cities a user may travel to:
 | Tokyo, Japan | Tokyo is largely Buddhist and Shinto, but the cultural stamp of Christmas is all over the town. Many visitors to the world's most populous enjoy a romantic stay, enjoying the marvelous lights around the city.| ![tokyo8.jpg](spider/tokyo8.jpg) |
 | Vienna, Austria | Home to Christmas markets like Christkindlmarkt and Spittelberg, holiday participants enjoy fried sausages and goulash soup, and drink hot Christmas punch.| ![vienna8.jpg](spider/vienna8.jpg) |
 
-### 2.4.0.1. Hints
+#### 2.4.0.1. Hints
 Below all the hints I was able to retrieve and the explanation I found for each one:
 | **HINT** | **EXPLANATION** | **SOURCE** |
 | -------- | --------------- | ---------- |
@@ -95,7 +95,7 @@ Below all the hints I was able to retrieve and the explanation I found for each 
 | They were excited that their phone was going to work on the 1500 MHz LTE band | I believe this points out to Japan | https://www.worldtimezone.com/gsm.html |
 | You just missed the elf! | I think it's just about missing the Elf | N/A | 
 
-### 2.4.1. Elf mapping
+#### 2.4.1. Elf mapping
 I mapped out the attributes of all elves:
 | **ELF**              | **ELF IMAGE** | **LANGUAGE SPOKEN** | **PREFERRED SOCIAL MEDIUM** | **PREFERRED INDENTS** | **FANDOM**     | **PRONOUNCES "GIF"** |
 | -------------------- | ------------- | ------------------- | --------------------------- | --------------------- | -------------- | -------------------- |
@@ -115,35 +115,35 @@ I mapped out the attributes of all elves:
 Shall we assume no elf uses Soft "G"s?
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](/README.md)
-# [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](/README.md#17-narrative)
-# [18. Conclusions](/README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](/README.md)
+## [1. KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](/README.md#17-narrative)
+## [18. Conclusions](/README.md#18-conclusions)

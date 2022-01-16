@@ -1,15 +1,15 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 12. Frost Tower Website Checkup
-## 12.0. Description
+## 12. Frost Tower Website Checkup
+### 12.0. Description
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Investigate [Frost Tower's website for security issues](https://staging.jackfrosttower.com/). [This source code will be useful in your analysis](https://download.holidayhackchallenge.com/2021/frosttower-web.zip). In Jack Frost's TODO list, what job position does Jack plan to offer Santa? Ribb Bonbowford, in Santa's dining room, may have some pointers for you.
 
-## 12.1. Side Challenge - The Elf C0de Python Edition
+### 12.1. Side Challenge - The Elf C0de Python Edition
 
-## 12.2. Hints
+### 12.2. Hints
 **SQL Injection with Source** - *Ribb Bonbowford*: “When you have the source code, API documentation becomes [tremendously valuable](https://www.npmjs.com/package/express-session).”
 
-## 12.3. Solution
+### 12.3. Solution
 Analyzing the source code it is possible to notice that if a POST is sent to endpoint `/postcontact` with an email address that already exists than a session is released to the user setting `session.uniqueID = email`:
 ```js
 app.post('/postcontact', function(req, res, next){
@@ -161,11 +161,11 @@ A first run shown the table “TODO” that was not present in the given [encont
 ```
 ┌──(thedead㉿thinkali)-[~/Desktop/repos/Kringlecon4/12) Frost Tower Website Checkup]
 └─$ python2 frost_tower_SQLi.py 2>frost_tower_SQLi_stderr1.txt
-### Setup ###
+#### Setup ###
 Base URL                 : https://staging.jackfrosttower.com/detail/PAYLOAD
 Base Query               : 1,QUERY_PAYLOAD
 Sleep Time               : 0.1
-### Run ###
+#### Run ###
 Table Schema encontact Table todo has 3 columns
 Table Schema encontact Table todo column #0 has a 4 char long hex encoded name
 Table Schema encontact Table todo column #0 has name id [hex 6964]
@@ -195,39 +195,39 @@ Table todo row#8 has content [9, 'With Santa defeated, offer the old man a job a
 
 ...aaaaanddd that’s how Jack is going to try getting Santa a job as a clerk :)
 
-## 12.4. It’s FOSS
+### 12.4. It’s FOSS
 The source code for the SQL injection script is [available](sqli/frost_tower_SQLi.py). 
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](../README.md)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](../README.md#17-narrative)
-# [18. Conclusions](../README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](../README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](../README.md#17-narrative)
+## [18. Conclusions](../README.md#18-conclusions)

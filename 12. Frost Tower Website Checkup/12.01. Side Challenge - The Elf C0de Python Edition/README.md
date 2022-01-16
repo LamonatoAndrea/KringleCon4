@@ -1,31 +1,31 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 12. Frost Tower Website Checkup
+## 12. Frost Tower Website Checkup
 
-## 12.1. Side Challenge - The Elf C0de Python Edition
+### 12.1. Side Challenge - The Elf C0de Python Edition
 
-### 12.1.0. Hints
+#### 12.1.0. Hints
 **Function Calls** - *Ribb Bonbowford*: “You can call functions like myFunction(). If you ever need to pass a function to a munchkin, you can use myFunction without the ().”  
 **Bumping into Walls** - *Ribb Bonbowford*: “Looping through long movements? Don't be afraid to moveUp(99) or whatever. You elf will stop at any obstacle.”  
 **Moving the Elf** - *Ribb Bonbowford*: “You can move the elf with commands like elf.moveLeft(5), elf.moveTo({"x":2,"y":2}), or elf.moveTo(lever0.position).”  
 **Lever Requirements** - *Ribb Bonbowford*: “Not sure what a lever requires? Click it in the Current Level Objectives panel.”  
 
-### 12.1.1. Solution
-#### 12.1.0. Level 0
+#### 12.1.1. Solution
+##### 12.1.0. Level 0
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
-# Grab our lever object
+## Grab our lever object
 lever = levers.get(0)
 munchkin = munchkins.get(0)
 lollipop = lollipops.get(0)
-# move to lever position
+## move to lever position
 elf.moveTo(lever.position)
-# get lever int and add 2 and submit val
+## get lever int and add 2 and submit val
 leverData = lever.data() + 2
 lever.pull(leverData)
-# Grab lollipop and stand next to munchkin
+## Grab lollipop and stand next to munchkin
 elf.moveLeft(1)
 elf.moveUp(8)
-# Solve the munchkin's challenge
+## Solve the munchkin's challenge
 munchList = munchkin.ask() # e.g. [1, 3, "a", "b", 4]
 answer_list = []
 for elem in munchList:
@@ -34,13 +34,13 @@ for elem in munchList:
 munchkin.answer(answer_list)
 elf.moveUp(2) # Move to finish
 ```
-#### 12.1.1. Level 1
+##### 12.1.1. Level 1
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 elf.moveLeft(10)
 elf.moveUp(100)
 ```
-#### 12.1.2. Level 2
+##### 12.1.2. Level 2
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 elf.moveTo(lollipops.get(1).position)
@@ -50,7 +50,7 @@ elf.moveUp(4)
 elf.moveLeft(3)
 elf.moveUp(100)
 ```
-#### 12.1.3. Level 3
+##### 12.1.3. Level 3
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 lever = levers.get(0)
@@ -59,7 +59,7 @@ lever.pull(lever.data()+2)
 elf.moveTo(lollipops.get(0).position)
 elf.moveUp(100)
 ```
-#### 12.1.4. Level 4
+##### 12.1.4. Level 4
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 lever0, lever1, lever2, lever3, lever4 = levers.get()
@@ -75,7 +75,7 @@ elf.moveUp (2)
 lever0.pull({})
 elf.moveUp(20)
 ```
-#### 12.1.5. Level 5
+##### 12.1.5. Level 5
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 lever0, lever1, lever2, lever3, lever4 = levers.get()
@@ -95,7 +95,7 @@ obj['strkey'] = "strvalue"
 lever0.pull(obj)
 elf.moveUp(20)
 ```
-#### 12.1.6. Level 6
+##### 12.1.6. Level 6
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 elf.moveUp(2)
@@ -108,7 +108,7 @@ elif type(data) == int:
 lever.pull(data)
 elf.moveUp(100)
 ```
-#### 12.1.7. Level 7
+##### 12.1.7. Level 7
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 for num in range(10): 
@@ -117,7 +117,7 @@ for num in range(10):
     elf.moveUp(100)
     elf.moveLeft(3)
 ```
-#### 12.1.8. Level 8
+##### 12.1.8. Level 8
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 m0 = munchkins.get(0)
@@ -131,7 +131,7 @@ for lollipop in all_lollipops:
 elf.moveLeft(8)
 elf.moveUp(100)
 ```
-#### 12.1.9. Level 9
+##### 12.1.9. Level 9
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 def func_to_pass_to_mucnhkin(list_of_lists):
@@ -152,7 +152,7 @@ elf.moveUp(2)
 elf.moveLeft(4)
 elf.moveUp(100)
 ```
-#### 12.1.10. Level 10
+##### 12.1.10. Level 10
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 import time
@@ -166,40 +166,40 @@ elf.moveLeft(6)
 elf.moveUp(100)
 ```
 
-### 12.2. Level 8 @ KringleCon3
+#### 12.2. Level 8 @ KringleCon3
 This year I didn’t come up with any weird solution for this challenge but you can still insult [my Level 8 solution](https://github.com/LamonatoAndrea/KringleCon3/blob/main/04.%20Operate%20the%20Santavator/README.md#418-level-8) from last year.  
 ![meme](meme.png)
 
 ---
-# [2. Where in the World is Caramel Santiaigo?](README.md)
-# [2.1. Side Challenge - Exif Metadata](README.md)
-# [3. Thaw Frost Tower's Entrance](README.md)
-# [3.1. Side Challenge - Grepping for Gold](README.md)
-# [4. Slot Machine Investigation](README.md)
-# [4.1. Side Challenge - Logic Munchers](README.md)
-# [5. Strange USB Device](README.md)
-# [5.1. Side Challenge - IPv6 Sandbox](README.md)
-# [6. Shellcode Primer](README.md)
-# [6.1. Side Challenge - Holiday Hero](README.md)
-# [7. Printer Exploitation](README.md)
-# [7.0. Description](README.md)
-# [8. Kerberoasting on an Open Fire](README.md)
-# [8.1. Side Challenge - HoHo … No](README.md)
-# [9. Splunk!](README.md)
-# [9.1. Side Challenge - Yara Analysis](README.md)
-# [10. Now Hiring!](README.md)
-# [10.1. Side Challenge - IMDS Exploration](README.md)
-# [11. Customer Complaint Analysis](README.md)
-# [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
-# [12. Frost Tower Website Checkup](README.md)
-# [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
-# [13. FPGA Programming](README.md)
-# [13.1. Side Challenge - Frostavator](README.md)
-# [14. Bonus! Blue Log4Jack](README.md)
-# [15. Bonus! Red Log4Jack](README.md)
+## [2. Where in the World is Caramel Santiaigo?](README.md)
+## [2.1. Side Challenge - Exif Metadata](README.md)
+## [3. Thaw Frost Tower's Entrance](README.md)
+## [3.1. Side Challenge - Grepping for Gold](README.md)
+## [4. Slot Machine Investigation](README.md)
+## [4.1. Side Challenge - Logic Munchers](README.md)
+## [5. Strange USB Device](README.md)
+## [5.1. Side Challenge - IPv6 Sandbox](README.md)
+## [6. Shellcode Primer](README.md)
+## [6.1. Side Challenge - Holiday Hero](README.md)
+## [7. Printer Exploitation](README.md)
+## [7.0. Description](README.md)
+## [8. Kerberoasting on an Open Fire](README.md)
+## [8.1. Side Challenge - HoHo … No](README.md)
+## [9. Splunk!](README.md)
+## [9.1. Side Challenge - Yara Analysis](README.md)
+## [10. Now Hiring!](README.md)
+## [10.1. Side Challenge - IMDS Exploration](README.md)
+## [11. Customer Complaint Analysis](README.md)
+## [11.1. Side Challenge - Strace Ltrace Retrace](README.md)
+## [12. Frost Tower Website Checkup](README.md)
+## [12.1. Side Challenge - The Elf C0de Python Edition](README.md)
+## [13. FPGA Programming](README.md)
+## [13.1. Side Challenge - Frostavator](README.md)
+## [14. Bonus! Blue Log4Jack](README.md)
+## [15. Bonus! Red Log4Jack](README.md)
 ---
-# [0. windovo\\thedead> whoami](../README.md)
-# [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
-# [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
-# [17. Narrative](../README.md#17-narrative)
-# [18. Conclusions](../README.md#18-conclusions)
+## [0. windovo\\thedead> whoami](../README.md)
+## [1. KringleCon Orientation](01.%20KringleCon%20Orientation/README.md)
+## [16. That’s how Jack came from space](../README.md#16-thats-how-jack-came-from-space)
+## [17. Narrative](../README.md#17-narrative)
+## [18. Conclusions](../README.md#18-conclusions)
