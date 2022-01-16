@@ -4,13 +4,13 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Write your first FPGA program to make a doll sing. You might get some suggestions from Grody Goiterson, near Jack's elevator.
 
-### 13.1. Side Challenge - Frostavator
+### 13.1. [Side Challenge - Frostavator](/13.01.%20Side%20Challenge%20-%20Frostavator/README.md)
 
 ### 13.2. Hints
-**FPGA Talk** - *Grody Goiterson*: “Prof. Qwerty Petabyte is giving [a lesson](https://www.youtube.com/watch?v=GFdG1PJ4QjA) about Field Programmable Gate Arrays (FPGAs).”
+**FPGA Talk** - *Grody Goiterson*: “Prof. Qwerty Petabyte is giving [a lesson](https://www.youtube.com/watch?v=GFdG1PJ4QjA) about Field Programmable Gate Arrays (FPGAs).”  
 **FPGA for Fun** - *Grody Goiterson*: “There are [FPGA enthusiast sites](https://www.fpga4fun.com/MusicBox.html).”
 
-#### 13.3. Solution
+### 13.3. Solution
 Below the code I used to make the doll sing:
 ```verilog
 `timescale 1ns/1ns
@@ -63,7 +63,7 @@ module tone_generator (input clk, input rst, input [31:0] freq, output wave_out)
 endmodule
 ```
 
-This code doesn’t always work (or basically doesn't work most of the times :) ), but it is enough to pass the challenge with an input frequency of 1504.08:
+This code doesn’t always work (or basically doesn't work most of the times :) ), but it is enough to pass the challenge with an input frequency of `1504.08`:
 ```bash
 Sending code for analysis...
 Verilog parsed cleanly...
@@ -73,7 +73,10 @@ Using a clock frequency of 125MHz, the closest you could get to the target frequ
 Simulation results indicate a frequency of: 1504.2118Hz
 Your square wave's frequency is within -0.009627% of the best-fit value
 ```
-![1504.08](1504.08.png)
+![1504.08](imgs/1504.08.png)
+
+#### 13.3.0. A proper solution...
+I've seen also a proper solution to this challenge but I'm actually proud of my "almost works" `¯\_(ツ)_/¯` shame.
 
 ### 13.4. Kudos!
 #### 13.4.0. Floor on the ceiling, @John_r2
@@ -81,16 +84,16 @@ Thanks to @John_r2 for checking if my logic of using ceil and floor function mad
 #### 13.4.1. Local-ion, Local-ion, Local-ion, @i81b4u
 Thanks to @i81b4u for helping me fix the local storage issue that was preventing me from submitting any code.
 I was facing this error:  
-![00](error_imgs/00_error.png)
+![00](imgs/error_imgs/00_error.png)
 
 When using curl and manually populating the uuid value it worked:  
-![01](error_imgs/01_curl.png)
+![01](imgs/error_imgs/01_curl.png)
 
 Turns out the local storage for the page was polluted:
-![02](error_imgs/02_local_storage_KO.png)
+![02](imgs/error_imgs/02_local_storage_KO.png)
  
 Once I cleaned the local storage, the page worked fine.
-![03](error_imgs/03_local_storage_refresh.png)
+![03](imgs/error_imgs/03_local_storage_refresh.png)
 #### 13.4.2. Same it bro, @i81b4u
 Thanks to @i81b4u for the discussion and the help by performing a same-value test with me :)
 
