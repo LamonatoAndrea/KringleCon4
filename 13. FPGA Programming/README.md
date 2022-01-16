@@ -4,7 +4,7 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Write your first FPGA program to make a doll sing. You might get some suggestions from Grody Goiterson, near Jack's elevator.
 
-### 13.1. [Side Challenge - Frostavator](/13.01.%20Side%20Challenge%20-%20Frostavator/README.md)
+### 13.1. [Side Challenge - Frostavator](/13.%20FPGA%20Programming/13.01.%20Side%20Challenge%20-%20Frostavator/README.md)
 
 ### 13.2. Hints
 **FPGA Talk** - *Grody Goiterson*: “Prof. Qwerty Petabyte is giving [a lesson](https://www.youtube.com/watch?v=GFdG1PJ4QjA) about Field Programmable Gate Arrays (FPGAs).”  
