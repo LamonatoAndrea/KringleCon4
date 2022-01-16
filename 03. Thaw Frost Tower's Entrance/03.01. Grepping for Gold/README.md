@@ -2,6 +2,7 @@
 # 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 
 ## 3.1. Side Challenge - Grepping for Gold
+The objective is to extract information from an nmap scan using grep.
 
 ## 3.1.0. Hints
 **Grep Cheat Sheet** - *Greasy GopherGuts*: “Check [this](https://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php) out if you need a grep refresher.”
