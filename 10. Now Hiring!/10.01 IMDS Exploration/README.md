@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-## 10. Now Hiring!
+## 10. [Now Hiring!](/10.%20Now%20Hiring!/README.md)
 
 ### 10.1. Side Challenge - IMDS Exploration
 #### 10.1.0. Task 1
