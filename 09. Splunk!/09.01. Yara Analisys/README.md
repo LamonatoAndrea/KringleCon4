@@ -1,8 +1,8 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 9. Splunk!
+# 9. [Splunk!](/09.%20Splunk!/README.md)
 
 ## 9.1. Side Challenge - Yara Analysis
-The objective is to allow execution of “the_critical_elf_app” even though it triggers some predefined Yara rules.
+The objective is to allow execution of `the_critical_elf_app` even though it triggers some predefined Yara rules.
 
 The motd of this terminal is:
 ```bash
@@ -24,12 +24,12 @@ The children will be very disappointed if their candy won't even cause a single 
 ```
 
 ### 9.1.0. yara_rule_135
-The first rules that triggers is yara_rule_135:
+The first rules that triggers is `yara_rule_135`:
 ```bash
 snowball2@2b442252ab9b:~$ ./the_critical_elf_app 
 yara_rule_135 ./the_critical_elf_app
 ```
-The rule searches for the string “candycane”:
+The rule searches for the string `candycane`:
 ```bash
 rule yara_rule_135 {
    meta:
@@ -55,12 +55,12 @@ It is possible to find the string and replace it in a hex editor:
 ```
 
 ### 9.1.1. yara_rule_1056
-The second rules that triggers is yara_rule_1056:
+The second rules that triggers is `yara_rule_1056`:
 ```bash
 snowball2@2b442252ab9b:~$ ./the_critical_elf_app 
 yara_rule_1056 ./the_critical_elf_app
 ```
-This rule searches for the hex sequence “6c 6962 632e 736f 2e36” and “726f 6772 616d 2121”:
+This rule searches for the hex sequence `6c 6962 632e 736f 2e36` and `726f 6772 616d 2121`:
 ```bash
 rule yara_rule_1056 {
    meta: 
@@ -89,7 +89,7 @@ snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "726f 6772" -A 1 -B 1
 00002060: 486_f 6c69 6461 7948 6163 6b43 6861 6c6c  HolidayHackChall
 ```
 
-As I didn't feel too safe altering a libc reference I modified the second string:
+As I didn't feel too safe altering a `libc` reference I modified the second string:
 ```bash
 00002040: 2065 7865 6375 7469 6f6e 206f 6620 7468   execution of th
 00002050: 6973 2070 726f 6772 616d 2121 0000 0000  is program!!....
@@ -102,12 +102,12 @@ As I didn't feel too safe altering a libc reference I modified the second string
 ```
 
 ### 9.1.2. yara_rule_1732
-The third rules that triggers is yara_rule_1732:
+The third rules that triggers is `yara_rule_1732`:
 ```bash
 snowball2@ad2b9bc1bb62:~$ ./the_critical_elf_app
 yara_rule_1732 ./the_critical_elf_app
 ```
-This rule searches for at least 10 strings within a set of 20 strings in files beginning with 0x02464c45 and that are less than 50KB in size:
+This rule searches for at least 10 strings within a set of 20 strings in files beginning with `0x02464c45` and that are less than 50KB in size:
 ```bash
 rule yara_rule_1732 {
    meta:
@@ -142,11 +142,11 @@ rule yara_rule_1732 {
       10 of them
 }
 ```
-With the same approach, I solved the challenge modifiyng the hex content of the file manually with vim, trying not to break its execution.
+With the same approach, I solved the challenge modifiyng the hex content of the file manually with `vim`, trying not to break its execution.
 
 ### 9.1.4. Summary of changes
 Below the diff between the original file (green) and the tampered one (red):  
-![summary](YaraAnalisys.PNG)
+![summary](imgs/YaraAnalisys.PNG)
 
 ### 9.1.5. Execution
 Finally the app was able to execute:
