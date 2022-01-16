@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-## 11. Customer Complaint Analysis
+## 13. [FPGA Programming](/13.%20FPGA%20Programming/README.md)
 
 ### 13.1. Side Challenge - Frostavator
 The objective is to put the logic gates in the right position to move the Frostavator again.
@@ -9,8 +9,7 @@ The objective is to put the logic gates in the right position to move the Frosta
 
 #### 13.1.1. Solution
 Below a working configuration for the Frostavator:  
-![frostavator](frostavator.png)
-
+![frostavator](imgs/frostavator.png)
 
 ---
 ## [2. Where in the World is Caramel Santiaigo?](README.md)
