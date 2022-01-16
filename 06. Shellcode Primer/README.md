@@ -4,12 +4,12 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree:   
 Complete the [Shellcode Primer](https://tracer.kringlecastle.com/) in Jack's office. According to the last challenge, what is the secret to KringleCon success? "All of our speakers and organizers, providing the gift of ____, free to the community." Talk to Chimney Scissorsticks in the NetWars area for hints.
 
-## 6.1. Side Challenge - Holiday Hero
+## 6.1. [Side Challenge - Holiday Hero](/06.%20Shellcode%20Primer/06.01.%20Side%20Challenge%20-%20Holiday%20Hero/README.md)
 
 ## 6.2. Hints
-**Shellcode Primer Primer** - *Chimney Scissorsticks*: “If you run into any shellcode primers at the North Pole, be sure to read the directions and the comments in the shellcode source!”
-**Debugging Shellcode** - *Chimney Scissorsticks*: “Also, troubleshooting shellcode can be difficult. Use the debugger step-by-step feature to watch values.”
-**Register Stomping** - *Chimney Scissorsticks*: “Lastly, be careful not to overwrite any register values you need to reference later on in your shellcode.”
+**Shellcode Primer Primer** - *Chimney Scissorsticks*: “If you run into any shellcode primers at the North Pole, be sure to read the directions and the comments in the shellcode source!”  
+**Debugging Shellcode** - *Chimney Scissorsticks*: “Also, troubleshooting shellcode can be difficult. Use the debugger step-by-step feature to watch values.”  
+**Register Stomping** - *Chimney Scissorsticks*: “Lastly, be careful not to overwrite any register values you need to reference later on in your shellcode.”  
 
 ## 6.3. Solution
 ### 6.3.0. Introduction

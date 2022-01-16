@@ -1,21 +1,18 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 6. Strange USB Device
-## 6.0. Description
-Difficulty: :christmas_tree::christmas_tree::christmas_tree:   
-Complete the [Shellcode Primer](https://tracer.kringlecastle.com/) in Jack's office. According to the last challenge, what is the secret to KringleCon success? "All of our speakers and organizers, providing the gift of ____, free to the community." Talk to Chimney Scissorsticks in the NetWars area for hints.
+# 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)
 
 ## 6.1. Side Challenge - Holiday Hero
 The objective is to get the Santa Sleigh up and flying by smashing those notes on the keyboard!
 Unfortunately it’s a lonely place there and nobody wants to play with me…
 
 That made me so sad I had to give myself a single_player_cookie by the name of HOHOHO:  
-![hohoho](HOHOHO_cookie.PNG)
+![hohoho](imgs/HOHOHO_cookie.PNG)
 
 I found myself still in lonely land, so I had to explicitly tell my imaginary friend to join:  
-![single_player](single_player.PNG)
+![single_player](imgs/single_player.PNG)
 
 Finally me and my [Armadillo](https://it.wikipedia.org/wiki/Armadillo_(Zerocalcare)) were able to have some FUN getting that sleigh pumped up to 100%:  
-[![video](video-360p.gif)](video_360p.mp4)
+[![video](imgs/video-360p.gif)](imgs/video_360p.mp4)
 
 ### 6.1.0. I don’t know why
 I don’t know why I made this solution so much on the weird side, but I hope you’ll have fun reading it :)
