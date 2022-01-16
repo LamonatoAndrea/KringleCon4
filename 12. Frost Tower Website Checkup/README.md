@@ -57,12 +57,12 @@ app.get('/detail/:id', function(req, res, next) {
 });
 ```
 
-Notice that the IDs 'I-do-not-exist' and 'I-also-do-not-exist' do not exist:  
+Notice that the IDs `I-do-not-exist` and `I-also-do-not-exist` do not exist:  
 ![04_non_existent_values](imgs/04_non_existent_values.png)  
 Then confirm the SQL injection by accessing the URL https://staging.jackfrosttower.com/detail/'I-do-not-exist','I-also-do-not-exist'%20or%201=1 with a valid session and still retieving all the content of the `uniquecontact` table is printed due to the ` or 1=1` part of the parameters:  
 ![05_SQLi](imgs/05_SQLi.png)  
 
-The real problem with this SQL injection is to avoid the usage of commas as the endpoint splits IDs on that character. Also, not being able to use UNION to obtain further values, I resurrected my [handy python script for blind SQL injections](https://github.com/LamonatoAndrea/KringleCon2/blob/master/01%20-%20Primary%20Objectives/09%20-%20Retrieve%20Scraps%20of%20Paper%20from%20Server/students.py) and slightly readapted it for the purpose.
+The real problem with this SQL injection is to avoid the usage of commas as the endpoint splits IDs on that character. Also, not being able to use UNION to obtain further values at a first try, I resurrected my [handy python script for blind SQL injections](https://github.com/LamonatoAndrea/KringleCon2/blob/master/01%20-%20Primary%20Objectives/09%20-%20Retrieve%20Scraps%20of%20Paper%20from%20Server/students.py) and slightly readapted it for the purpose.
 
 The first run went fairly good even though the response times on successful queries were definitely huge:  
 ```sql
