@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 6. Strange USB Device
+# 6. Shellcode Primer
 ## 6.0. Description
 Difficulty: :christmas_tree::christmas_tree::christmas_tree:   
 Complete the [Shellcode Primer](https://tracer.kringlecastle.com/) in Jack's office. According to the last challenge, what is the secret to KringleCon success? "All of our speakers and organizers, providing the gift of ____, free to the community." Talk to Chimney Scissorsticks in the NetWars area for hints.
