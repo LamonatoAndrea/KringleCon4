@@ -2,9 +2,9 @@
 ## 10. Now Hiring!
 ### 10.0. Description
 Difficulty: :christmas_tree::christmas_tree::christmas_tree:  
-What is the secret access key for the [Jack Frost Tower job applications server](imgs/https://apply.jackfrosttower.com/)? Brave the perils of Jack's bathroom to get hints from Noxious O. D'or.
+What is the secret access key for the [Jack Frost Tower job applications server](https://apply.jackfrosttower.com/)? Brave the perils of Jack's bathroom to get hints from Noxious O. D'or.
 
-### 10.1. [Side Challenge - IMDS Exploration](imgs//10.%20Now%20Hiring!/10.01%20IMDS%20Exploration/README.md)
+### 10.1. [Side Challenge - IMDS Exploration](/10.%20Now%20Hiring!/10.01%20IMDS%20Exploration/README.md)
 
 ### 10.2. Hints
 **AWS IMDS Documentation** - *Noxious O. D'or*: “The AWS documentation for IMDS is interesting reading.”
