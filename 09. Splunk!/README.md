@@ -4,12 +4,12 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree:  
 Help Angel Candysalt solve the Splunk challenge in Santa's great hall. Fitzy Shortstack is in Santa's lobby, and he knows a few things about Splunk. What does Santa call you when when you complete the analysis?
 
-## 9.1. Side Challenge - Yara Analysis
+## 9.1. [Side Challenge - Yara Analysis](/09.%20Splunk!/09.01.%20Yara%20Analisys/README.md)
 
 ## 9.2. Hints
-**Malicious NetCat??** - *Fitzy Shortstack*: “Did you know there are multiple versions of the Netcat command that can be used maliciously? nc.openbsd, for example.”
-**Sysmon Monitoring in Splunk** - *Fitzy Shortstack*: “Sysmon network events don't reveal the process parent ID for example. Fortunately, we can pivot with a query to investigate process creation events once you get a process ID.”
-**GitHub Monitoring in Splunk** - *Fitzy Shortstack*: “Between GitHub audit log and webhook event recording, you can monitor all activity in a repository, including common git commands such as git add, git status, and git commit.”
+**Malicious NetCat??** - *Fitzy Shortstack*: “Did you know there are multiple versions of the Netcat command that can be used maliciously? nc.openbsd, for example.”  
+**Sysmon Monitoring in Splunk** - *Fitzy Shortstack*: “Sysmon network events don't reveal the process parent ID for example. Fortunately, we can pivot with a query to investigate process creation events once you get a process ID.”  
+**GitHub Monitoring in Splunk** - *Fitzy Shortstack*: “Between GitHub audit log and webhook event recording, you can monitor all activity in a repository, including common git commands such as git add, git status, and git commit.”  
 
 ## 9.3. Solution
 Santa's To-Do List
@@ -223,7 +223,7 @@ preinstall.sh
 
 ### 9.3.8. What does Santa call you when when you complete the analysis?
 Thank you for helping Santa complete his investigation! Santa says you're a **whiz**!
-![Whiz](Whiz.png)
+![Whiz](imgs/Whiz.png)
 
 ---
 # [2. Where in the World is Caramel Santiaigo?](README.md)
