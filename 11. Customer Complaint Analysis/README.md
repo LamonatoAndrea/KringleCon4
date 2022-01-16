@@ -4,24 +4,24 @@
 Difficulty: :christmas_tree::christmas_tree:  
 A human has accessed the Jack Frost Tower network with a non-compliant host. [Which three trolls complained about the human](https://downloads.holidayhackchallenge.com/2021/jackfrosttower-network.zip)? Enter the troll names in alphabetical order separated by spaces. Talk to Tinsel Upatree in the kitchen for hints.
 
-### 11.1. Side Challenge - Strace Ltrace Retrace
+### 11.1. [Side Challenge - Strace Ltrace Retrace](/11.%20Customer%20Complaint%20Analysis/11.01%20Side%20Challenge%20-%20Strace%20Ltrace%20Retrace/README.md)
 
 ### 11.2. Hints
-**Wireshark Display Filters** - *Tinsel Upatree*: “Different from BPF capture filters, Wireshark's [display filters](https://wiki.wireshark.org/DisplayFilters) can find text with the contains keyword - and evil bits with ip.flags.rb.”
+**Wireshark Display Filters** - *Tinsel Upatree*: “Different from BPF capture filters, Wireshark's [display filters](https://wiki.wireshark.org/DisplayFilters) can find text with the contains keyword - and evil bits with ip.flags.rb.”  
 **Evil Bit RFC** - *Tinsel Upatree*: “[RFC3514](https://datatracker.ietf.org/doc/html/rfc3514) defines the usage of the "Evil Bit" in IPv4 headers.”
 
 
-#### 11.3. Solution
+## 11.3. Solution
 Considering the “Evil Bit” RFC it is meant to inform security platforms to inspect the packet when it is set to 1, therefore it makes sense that most packets have it enabled. Only one packet has the “Evil Bit” set to 0:  
-![00_GenerallyValidPacket](00_GenerallyValidPacket.PNG)
+![00_GenerallyValidPacket](imgs/00_GenerallyValidPacket.PNG)
 
 The packet contains a complaint against “several” trolls from someone named “Muffy VonDuchess Sebastian” with the reference “Room 1024”: “I have never, in my life, been in a facility with such a horrible staff. They are rude and insulting. What kind of place is this? You can be sure that I (or my lawyer) will be speaking directly with Mr. Frost!”:
-![01_JustOneBadPacket](01_JustOneBadPacket.PNG)
+![01_JustOneBadPacket](imgs/01_JustOneBadPacket.PNG)
 
 Three trolls complained about a woman in Room 1024: Flud, Hagg and Yaqh.  
-![02_Flud](02_Flud.PNG)  
-![02_Hagg](02_Hagg.PNG)  
-![02_Yaqh](02_Yaqh.PNG)  
+![02_Flud](imgs/02_Flud.PNG)  
+![02_Hagg](imgs/02_Hagg.PNG)  
+![02_Yaqh](imgs/02_Yaqh.PNG)  
 
 ---
 ## [2. Where in the World is Caramel Santiaigo?](README.md)

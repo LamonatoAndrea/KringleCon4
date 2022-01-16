@@ -1,9 +1,8 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-## 11. Customer Complaint Analysis
-### 11.0. Description
+## 11. [Customer Complaint Analysis](/11.%20Customer%20Complaint%20Analysis/README.md)
 
 ### 11.1. Side Challenge - Strace Ltrace Retrace
-The objective is to fix and run the “make the candy” application without knowing much info on it.
+The objective is to fix and run the `make the candy` application without knowing much info on it.
 
 The motd of this terminal is:
 ```bash
@@ -15,13 +14,13 @@ software. Now it's complaining that it can't find a registration file!
 Perhaps you could figure out what the cotton candy software is looking for...
 ```
 
-A first run of the application shows the error “Unable to open configuration file.“:
+A first run of the application shows the error `Unable to open configuration file.`:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ ./make_the_candy 
 Unable to open configuration file.
 ```
 
-With strace it is possible to identify the application is looking for the file “registration.json” at the line `openat(AT_FDCWD, "registration.json", O_RDONLY) = -1 ENOENT (No such file or directory)`:
+With `strace` it is possible to identify the application is looking for the file `registration.json` at the line `openat(AT_FDCWD, "registration.json", O_RDONLY) = -1 ENOENT (No such file or directory)`:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ strace ./make_the_candy 
 execve("./make_the_candy", ["./make_the_candy"], 0x7ffe824d5710 /* 12 vars */) = 0
@@ -57,7 +56,7 @@ exit_group(1)                           = ?
 +++ exited with 1 +++
 ```
 
-Once created, the application still crashes with error “Unregistered - Exiting.”:
+Once created, the application still crashes with error `Unregistered - Exiting.`:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ touch registration.json
 
@@ -65,7 +64,7 @@ kotton_kandy_co@02c959b4cc60:~$ ./make_the_candy
 Unregistered - Exiting.
 ```
 
-With ltrace it is possible to identify the function `getline(0x7ffcffb78de0, 0x7ffcffb78de8, 0x561356d00260, 0x7ffcffb78de8) = -1` trying to retrieve data from “registration.json”:
+With `ltrace` it is possible to identify the function `getline(0x7ffcffb78de0, 0x7ffcffb78de8, 0x561356d00260, 0x7ffcffb78de8) = -1` trying to retrieve data from `registration.json`:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ ltrace ./make_the_candy 
 fopen("registration.json", "r")                           = 0x561356d00260
@@ -80,7 +79,7 @@ I just started inserting some random data:
 kotton_kandy_co@02c959b4cc60:~$ echo "12345678" > registration.json 
 ```
 
-Re-executing the application gives the same error, but ltrace shows that it is because the content of the file doesn’t match what the application expects with the `strstr` function:
+Re-executing the application gives the same error, but `ltrace` shows that it is because the content of the file doesn’t match what the application expects with the `strstr` function:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ ltrace ./make_the_candy 
 fopen("registration.json", "r")                           = 0x55b16b0f1260
@@ -92,7 +91,7 @@ puts("Unregistered - Exiting."Unregistered - Exiting.
 +++ exited (status 1) +++
 ```
 
-First word is "Registration":
+First word is `Registration`:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ echo "Registration" >> registration.json
 kotton_kandy_co@02c959b4cc60:~$ ltrace make_the_candy 
@@ -106,7 +105,7 @@ puts("Unregistered - Exiting."Unregistered - Exiting.
 )                           = 24
 +++ exited (status 1) +++
 ```
-Then it expects a ":" character:
+Then it expects a `:` character:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ echo "Registration" >> registration.json
 kotton_kandy_co@02c959b4cc60:~$ ltrace make_the_candy 
@@ -120,7 +119,7 @@ puts("Unregistered - Exiting."Unregistered - Exiting.
 )                           = 24
 +++ exited (status 1) +++
 ```
-And finally it searches for the string "True":
+And finally it searches for the string `True`:
 ```bash
 kotton_kandy_co@019be853f544:~$ echo "Registration:" > registration.json
 kotton_kandy_co@019be853f544:~$ ltrace ./make_the_candy 
@@ -135,7 +134,7 @@ puts("Unregistered - Exiting."Unregistered - Exiting.
 +++ exited (status 1) +++
 ```
 
-The final content of the “registration.json” file is “Registration:True” and the application can now run:
+The final content of the `registration.json` file is `Registration:True` and the application can now run:
 ```bash
 kotton_kandy_co@02c959b4cc60:~$ echo "Registration:True" > registration.json 
 
