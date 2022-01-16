@@ -1,14 +1,11 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
 # 4. Slot Machine Investigation
-## 4.0. Description
-Difficulty: :christmas_tree::christmas_tree:   
-Test the security of Jack Frost's [slot machines](https://slots.jackfrosttower.com/). What does the Jack Frost Tower casino security team threaten to do when your coin total exceeds 1000? Submit the string in the server data.response element. Talk to Noel Boetie outside Santa's Castle for help.
 
 ## 4.1. Side Challenge - Logic Munchers
 
 ## 4.2. Hints
-**AND, OR, NOT, XOR** - *Noel Boetie*: “[This](http://www.natna.info/English/Teaching/CSI30-materials/Chapter1-cheat-sheet.pdf) might be a handy reference too.”
-**Boolean Logic** - *Noel Boetie*: “There are lots of special symbols for logic and set notation. [This one](http://notes.imt-decal.org/sets/cheat-sheet.html) covers AND, NOT, and OR at the bottom.”
+**AND, OR, NOT, XOR** - *Noel Boetie*: “[This](http://www.natna.info/English/Teaching/CSI30-materials/Chapter1-cheat-sheet.pdf) might be a handy reference too.”  
+**Boolean Logic** - *Noel Boetie*: “There are lots of special symbols for logic and set notation. [This one](http://notes.imt-decal.org/sets/cheat-sheet.html) covers AND, NOT, and OR at the bottom.”  
 
 ## 4.3. Solution
 Analyzing the code of chompy.js it is possible to identify the function `moveit` that moves Chomper , the player’s avatar, the Trollogs , the bad guys, and identify their collisions, eventually calling the die function on our poor chompy Chomper.

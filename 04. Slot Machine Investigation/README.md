@@ -1,13 +1,13 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 4. Slot Machine Investigation
+# 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
 ## 4.0. Description
 Difficulty: :christmas_tree::christmas_tree:   
 Test the security of Jack Frost's [slot machines](https://slots.jackfrosttower.com/). What does the Jack Frost Tower casino security team threaten to do when your coin total exceeds 1000? Submit the string in the server data.response element. Talk to Noel Boetie outside Santa's Castle for help.
 
-## 4.1. Side Challenge - Logic Munchers
+## 4.1. [Side Challenge - Logic Munchers](/04.%20Slot%20Machine%20Investigation/04.01.%20Side%20Challenge%20-%20Logic%20Munchers/README.md)
 
 ## 4.2. Hints
-**Intercepting Proxies** - *Noel Boetie*: “Web application testers can use tools like [Burp Suite](https://portswigger.net/burp/communitydownload) or even right in the browser with Firefox's [Edit and Resend](https://itectec.com/superuser/how-to-edit-parameters-sent-through-a-form-on-the-firebug-console/) feature.”
+**Intercepting Proxies** - *Noel Boetie*: “Web application testers can use tools like [Burp Suite](https://portswigger.net/burp/communitydownload) or even right in the browser with Firefox's [Edit and Resend](https://itectec.com/superuser/how-to-edit-parameters-sent-through-a-form-on-the-firebug-console/) feature.”  
 **Parameter Tampering** - *Noel Boetie*: “It seems they're susceptible to [parameter tampering](https://owasp.org/www-community/attacks/Web_Parameter_Tampering).”
 
 ## 4.3. Solution
@@ -202,6 +202,8 @@ When the amount gets greater than 1000 then the message becomes “I'm going to 
   "message": "Spin success"
 }
 ```
+
+The answer: `I'm going to have some bouncer trolls bounce you right out of this casino!`
 
 ---
 # [2. Where in the World is Caramel Santiaigo?](README.md)
