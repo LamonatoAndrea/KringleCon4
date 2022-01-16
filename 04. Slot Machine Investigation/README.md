@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
+# 4. Slot Machine Investigation
 ## 4.0. Description
 Difficulty: :christmas_tree::christmas_tree:   
 Test the security of Jack Frost's [slot machines](https://slots.jackfrosttower.com/). What does the Jack Frost Tower casino security team threaten to do when your coin total exceeds 1000? Submit the string in the server data.response element. Talk to Noel Boetie outside Santa's Castle for help.

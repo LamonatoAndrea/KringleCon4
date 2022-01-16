@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 4. Slot Machine Investigation
+# 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
 
 ## 4.1. Side Challenge - Logic Munchers
 
@@ -42,7 +42,7 @@ function moveit(timestamp, startTime, obj, duration, startx, starty, endx, endy)
 }
 ```
 Instead of letting the player die, this function just shows a message in the console:  
-![console](Bored_of_being_eaten.PNG)
+![console](imgs/Bored_of_being_eaten.PNG)
 
 ## 4.4. Hopefully...
 If I will find the time to work on it, I would like to make chomper play without human interaction... Stay tuned and let's see how it goes :)
