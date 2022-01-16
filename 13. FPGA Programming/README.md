@@ -89,10 +89,10 @@ I was facing this error:
 When using curl and manually populating the uuid value it worked:  
 ![01](imgs/error_imgs/01_curl.png)
 
-Turns out the local storage for the page was polluted:
+Turns out the local storage for the page was polluted:  
 ![02](imgs/error_imgs/02_local_storage_KO.png)
  
-Once I cleaned the local storage, the page worked fine.
+Once I cleaned the local storage, the page worked fine:  
 ![03](imgs/error_imgs/03_local_storage_refresh.png)
 #### 13.4.2. Same it bro, @i81b4u
 Thanks to @i81b4u for the discussion and the help by performing a same-value test with me :)
