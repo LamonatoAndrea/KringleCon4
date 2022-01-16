@@ -1,7 +1,7 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
 # 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 
-## [3.1. Side Challenge - Grepping for Gold](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata)
+## 3.1. Side Challenge - Grepping for Gold
 
 ## 3.1.0. Hints
 **Grep Cheat Sheet** - *Greasy GopherGuts*: “Check [this](https://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php) out if you need a grep refresher.”
