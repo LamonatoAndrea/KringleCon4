@@ -24,7 +24,7 @@
 ## 12. [Frost Tower Website Checkup](/12.%20Frost%20Tower%20Website%20Checkup/README.md)
 ### 12.1. [Side Challenge - The Elf C0de Python Edition](/12.%20Frost%20Tower%20Website%20Checkup/12.01.%20Side%20Challenge%20-%20The%20Elf%20C0de%20Python%20Edition/README.md)
 ## 13. [FPGA Programming](/13.%20FPGA%20Programming/README.md)
-### 13.1. [Side Challenge - Frostavator](/13.01.%20Side%20Challenge%20-%20Frostavator/README.md)
+### 13.1. [Side Challenge - Frostavator](/13.%20FPGA%20Programming/13.01.%20Side%20Challenge%20-%20Frostavator/README.md)
 ## 14. [Bonus! Blue Log4Jack](/14.%20Bonus!%20Blue%20Log4Jack/README.md)
 ## 15. [Bonus! Red Log4Jack](/15.%20Bonus!%20Red%20Log4Jack/README.md)
 ## 16. [That’s how Jack came from space](/README.md#16-thats-how-jack-came-from-space)

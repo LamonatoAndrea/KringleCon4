@@ -3,7 +3,7 @@
 The objective is to exploit the recent Log4Jack vulnerability.
 
 ### 15.0. Hints
-**Log4j Discussion with Bishop Fox** - *Icky McGoop*: “Join Bishop Fox for [a discussion](https://bishopfox.com/blog/log4j-zero-day-cve-2021-44228) of the issues involved.”
+**Log4j Discussion with Bishop Fox** - *Icky McGoop*: “Join Bishop Fox for [a discussion](https://bishopfox.com/blog/log4j-zero-day-cve-2021-44228) of the issues involved.”  
 **Log4j Red Help Document** - *Icky McGoop*: “Josh Wright's [help document](https://gist.github.com/joswr1ght/fb361f1f1e58307048aae5c0f38701e4) for the Red challenge.”
 
 #### 15.1. Solution
