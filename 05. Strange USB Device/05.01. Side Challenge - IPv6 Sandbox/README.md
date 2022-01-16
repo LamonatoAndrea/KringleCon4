@@ -1,5 +1,5 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 5. Strange USB Device
+# 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)
 
 ## 5.1. Side Challenge - Logic Munchers
 The objective is to identify a machine that is hosting a service providing the password for Candy Striper.

