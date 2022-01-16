@@ -1,10 +1,9 @@
 # Writeup for SANS Holiday Hack Challenge 2021 – Jack’s Back! featuring KringleCon 4: Calling Birds
-# 8. Printer Exploitation
-## 8.0. Description
+# 8. [Kerberoasting on an Open Fire](/08.%20Kerberoasting%20on%20an%20Open%20Fire/README.md)
 
 ## 8.1. Side Challenge - HoHo … No
 The aim of this challenge is to customize Fail2ban so to automatically block all IPs generating more than 10 failures/hour. The challenge is successful when a filter, a jail and an action are properly set up and working.
-Using grep on the file “/var/log/hohono.log” it is possible to find 4 types of failure log messages:
+Using grep on the file `/var/log/hohono.log` it is possible to find 4 types of failure log messages:
 ```bash
 2021-12-19 23:40:08 Failed login from 16.62.11.108 for shinny
 2021-12-19 23:40:19 Login from 176.202.88.199 rejected due to unknown user name
@@ -12,7 +11,7 @@ Using grep on the file “/var/log/hohono.log” it is possible to find 4 types 
 2021-12-20 01:35:27 Invalid heartbeat 'bravo' from 188.150.137.180
 ```
 
-Based on that, the filter (/etc/fail2ban/filter.d/hohono_filter.conf) I created is:
+Based on that, the filter `/etc/fail2ban/filter.d/hohono_filter.conf` I created is:
 ```bash
 [Definition]
 failregex = Failed login from <HOST> for
@@ -20,7 +19,7 @@ failregex = Failed login from <HOST> for
             <HOST> sent a malformed request
             Invalid heartbeat .*? from <HOST>
 ```
-The jail (/etc/fail2ban/jail.d/hohono_jail.conf) is:
+The jail `/etc/fail2ban/jail.d/hohono_jail.conf` is:
 ```bash
 [hohono]
 enabled  = true
@@ -36,7 +35,7 @@ bantime = 3600
 action = hohono_action
 ```
 
-The action (/etc/fail2ban/action.d/hohono_action.conf) is:
+The action `/etc/fail2ban/action.d/hohono_action.conf` is:
 ```bash
 [Definition]
 actionban   = /root/naughtylist add <ip>
@@ -48,7 +47,7 @@ actionstop =
 [Init]
 ```
 
-By restarting the fail2ban service and running “/root/naughtylist refresh” it is possible to see that the configuration is a solution for the challenge:
+By restarting the `fail2ban` service and running `/root/naughtylist refresh` it is possible to see that the configuration is a solution for the challenge:
 ```bash
 root@8a9e21575182:~# /etc/init.d/fail2ban restart
  * Restarting Authentication failure monitor fail2ban                                   [ OK ] 
