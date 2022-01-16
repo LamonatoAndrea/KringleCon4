@@ -4,22 +4,22 @@
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:   
 Obtain the secret sleigh research document from a host on the Elf University domain. What is the first secret ingredient Santa urges each elf and reindeer to consider for a wonderful holiday season? Start by registering as a student on the [ElfU Portal](https://register.elfu.org/). Find Eve Snowshoes in Santa's office for hints.
 
-## 8.1. Side Challenge - HoHo … No
+## 8.1. [Side Challenge - HoHo … No](/08.%20Kerberoasting%20on%20an%20Open%20Fire/08.01.%20Side%20Challenge%20-%20HoHo%20…%20No/README.md)
 
 ## 8.2. Hints
-**Active Directory Interrogation** - *Eve Snowshoes*: “Investigating Active Directory errors is harder without [Bloodhound](https://github.com/BloodHoundAD/BloodHound), but there are [native methods](https://social.technet.microsoft.com/Forums/en-US/df3bfd33-c070-4a9c-be98-c4da6e591a0a/forum-faq-using-powershell-to-assign-permissions-on-active-directory-objects?forum=winserverpowershell).”
-**Stored Credentials** - *Eve Snowshoes*: “Administrators often store credentials in scripts. These can be coopted by an attacker for other purposes!”
-**CeWL for Wordlist Creation** - *Eve Snowshoes*: “[CeWL](https://github.com/digininja/CeWL) can generate some great wordlists from website, but it will ignore digits in terms by default.”
-**Hashcat Mangling Rules** - *Eve Snowshoes*: “[OneRuleToRuleThemAll.rule](https://github.com/NotSoSecure/password_cracking_rules) is great for mangling when a password dictionary isn't enough.”
-**Finding Domain Controllers** - *Eve Snowshoes*: “There will be some 10.X.X.X networks in your routing tables that may be interesting. Also, consider adding -PS22,445 to your nmap scans to "fix" default probing for unprivileged scans.”
-**Kerberoasting and Hashcat Syntax** - *Eve Snowshoes*: “Learn about [Kerberoasting](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) to leverage domain credentials to get usernames and crackable hashes for service accounts.”
-**Kerberoast and AD Abuse Talk** - *Eve Snowshoes*: “Check out [Chris Davis' talk](https://www.youtube.com/watch?v=iMh8FTzepU4) [and scripts](https://github.com/chrisjd20/hhc21_powershell_snippets) on Kerberoasting and Active Directory permissions abuse.”
+**Active Directory Interrogation** - *Eve Snowshoes*: “Investigating Active Directory errors is harder without [Bloodhound](https://github.com/BloodHoundAD/BloodHound), but there are [native methods](https://social.technet.microsoft.com/Forums/en-US/df3bfd33-c070-4a9c-be98-c4da6e591a0a/forum-faq-using-powershell-to-assign-permissions-on-active-directory-objects?forum=winserverpowershell).”  
+**Stored Credentials** - *Eve Snowshoes*: “Administrators often store credentials in scripts. These can be coopted by an attacker for other purposes!”  
+**CeWL for Wordlist Creation** - *Eve Snowshoes*: “[CeWL](https://github.com/digininja/CeWL) can generate some great wordlists from website, but it will ignore digits in terms by default.”  
+**Hashcat Mangling Rules** - *Eve Snowshoes*: “[OneRuleToRuleThemAll.rule](https://github.com/NotSoSecure/password_cracking_rules) is great for mangling when a password dictionary isn't enough.”  
+**Finding Domain Controllers** - *Eve Snowshoes*: “There will be some 10.X.X.X networks in your routing tables that may be interesting. Also, consider adding -PS22,445 to your nmap scans to "fix" default probing for unprivileged scans.”  
+**Kerberoasting and Hashcat Syntax** - *Eve Snowshoes*: “Learn about [Kerberoasting](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) to leverage domain credentials to get usernames and crackable hashes for service accounts.”  
+**Kerberoast and AD Abuse Talk** - *Eve Snowshoes*: “Check out [Chris Davis' talk](https://www.youtube.com/watch?v=iMh8FTzepU4) [and scripts](https://github.com/chrisjd20/hhc21_powershell_snippets) on Kerberoasting and Active Directory permissions abuse.”  
 
 ## 8.3. Solution
 ### 8.3.0. Escaping the grades application
 The challenge begins by accessing the URL https://register.elfu.org/register and registering a user:  
-![Registration page](00_Registration_page.png)  
-![user creds](01_user_credentials)
+![Registration page](imgs/00_Registration_page.png)  
+![user creds](imgs/01_user_credentials.png)
 
 Once the user is obtained it is possible to ssh into grades.elfu.org on port 2222 to end up in a CLI application:
 ```bash
