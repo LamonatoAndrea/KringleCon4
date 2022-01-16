@@ -1,0 +1,441 @@
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin' \
+>   -H 'authority: slots.jackfrosttower.com' \
+>   -H 'pragma: no-cache' \
+>   -H 'cache-control: no-cache' \
+>   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"' \
+>   -H 'accept: application/json' \
+>   -H 'sec-ch-ua-mobile: ?0' \
+>   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e' \
+>   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36' \
+>   -H 'sec-ch-ua-platform: "Windows"' \
+>   -H 'content-type: application/x-www-form-urlencoded' \
+>   -H 'origin: https://slots.jackfrosttower.com' \
+>   -H 'sec-fetch-site: same-origin' \
+>   -H 'sec-fetch-mode: cors' \
+>   -H 'sec-fetch-dest: empty' \
+>   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html' \
+>   -H 'accept-language: en-US,en;q=0.9,it;q=0.8' \
+>   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D' \
+>   --data-raw 'betamount=1&numline=20&cpl=0.1' \
+>   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   502    0   472  100    30    611     38 --:--:-- --:--:-- --:--:--   650
+{
+  "success": true,
+  "data": {
+    "credit": 96,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": 20,
+    "bet_amount": 1,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon3",
+        "icon6",
+        "icon10",
+        "icon6",
+        "scatter",
+        "icon1",
+        "icon5",
+        "icon5",
+        "icon4",
+        "icon7",
+        "icon10",
+        "icon3",
+        "icon4",
+        "scatter",
+        "icon8"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Keep playing!"
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=96&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   495    0   463  100    32    784     54 --:--:-- --:--:-- --:--:--   847
+{
+  "success": true,
+  "data": {
+    "credit": 288,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 96,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon1",
+        "icon5",
+        "icon1",
+        "icon3",
+        "icon7",
+        "scatter",
+        "icon5",
+        "icon8",
+        "icon7",
+        "wild",
+        "icon1",
+        "icon8",
+        "icon7",
+        "icon9",
+        "icon3"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "WINNER"
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=96&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   498    0   466  100    32    634     43 --:--:-- --:--:-- --:--:--   676
+{
+  "success": true,
+  "data": {
+    "credit": 480,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 96,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon9",
+        "icon1",
+        "icon9",
+        "icon9",
+        "icon10",
+        "icon8",
+        "icon8",
+        "icon2",
+        "wild",
+        "icon5",
+        "icon5",
+        "icon2",
+        "icon8",
+        "icon7",
+        "icon9"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Yeah yeah."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=2&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   494    0   463  100    31    786     52 --:--:-- --:--:-- --:--:--   838
+{
+  "success": true,
+  "data": {
+    "credit": 484,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 2,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon5",
+        "icon10",
+        "wild",
+        "wild",
+        "icon5",
+        "wild",
+        "icon7",
+        "icon8",
+        "icon7",
+        "icon4",
+        "icon6",
+        "icon2",
+        "icon6",
+        "icon3",
+        "icon4"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Yeah yeah."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=2&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   500    0   469  100    31    582     38 --:--:-- --:--:-- --:--:--   622
+{
+  "success": true,
+  "data": {
+    "credit": 488,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 2,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon10",
+        "icon1",
+        "icon2",
+        "icon4",
+        "icon4",
+        "icon9",
+        "scatter",
+        "icon1",
+        "icon6",
+        "icon7",
+        "icon4",
+        "icon10",
+        "wild",
+        "icon10",
+        "icon6"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Yeah yeah."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=2&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   497    0   466  100    31    774     51 --:--:-- --:--:-- --:--:--   826
+{
+  "success": true,
+  "data": {
+    "credit": 492,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 2,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon10",
+        "wild",
+        "icon9",
+        "icon4",
+        "icon9",
+        "icon10",
+        "icon6",
+        "icon2",
+        "icon2",
+        "icon2",
+        "icon2",
+        "icon4",
+        "icon7",
+        "icon3",
+        "icon8"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Yeah yeah."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=2&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   502    0   471  100    31    918     60 --:--:-- --:--:-- --:--:--   978
+{
+  "success": true,
+  "data": {
+    "credit": 496,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 2,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon10",
+        "icon10",
+        "icon1",
+        "wild",
+        "icon9",
+        "icon9",
+        "icon1",
+        "icon4",
+        "icon10",
+        "icon1",
+        "scatter",
+        "icon5",
+        "icon6",
+        "scatter",
+        "icon3"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "Yeah yeah."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=2&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   534    0   503  100    31    992     61 --:--:-- --:--:-- --:--:--  1053
+{
+  "success": true,
+  "data": {
+    "credit": 500,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 2,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon9",
+        "icon2",
+        "icon6",
+        "icon5",
+        "icon4",
+        "icon8",
+        "icon4",
+        "icon7",
+        "icon8",
+        "icon8",
+        "icon4",
+        "icon4",
+        "icon5",
+        "icon8",
+        "icon7"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "You won... but something looks suspicious to me."
+  },
+  "message": "Spin success"
+}
+                                                                                                                                                             ✔
+[thedead@windovo 04. Slot Machine Investigation]$ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: d30e4bcb-d098-4c94-a78e-307321eb612e'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'content-type: application/x-www-form-urlencoded'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjREMVJ4R05JajZaZ0FNS042M1E5cXc9PSIsInZhbHVlIjoiTklNZmUwc3lRQVlKNzlKTzQ3cE16ejErdFlrTnVHQVdWOE1meHZsYzB0bEJpd3hIT3QxSHduRHhsL2FhbGFyclVhMWkwSDZjTkRvRi9qbUNKQ2NGS2NZTVBETjI2bGZUTmovWHd1alRkcTNDQUU1NzBSYUs4cVZseFBCNkhCRXkiLCJtYWMiOiIwZTRlMmU3MmU5MTMxYjU0NThmMDhlNWZiOGJiN2RiMzYzYmM0MjEwZmUyZTBiMTIzOGQzNTU3ZDZhYTYyMDU0IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkZkWmMxTGU1REtTVldIQ08yZElSb0E9PSIsInZhbHVlIjoiQ1JienY1WFZzM1VEVGdHZkpXeGZPWjliTFRpS2JMREZzZ0Zwby9EbU9RaVZsUWlPYytVcWZia3dpTkg1bVBuTmxGYmdNdHRmMy91aVJiRzZORzRLTEFFSlhtYlJTaHF6aXBVcWZDbG1BdGx1azd3RStVZnpvaUJPMkowdTFpQjQiLCJtYWMiOiJlNWJlOTQ2NTFhODBmMTZkZWYxMjRkYTFjNTlhN2FmOGQ5NWI0NGVjMTA1MjY1MDlmY2YzYzcyNWJhNTE3ODhjIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=500&numline=-20&cpl=0.1'   --compressed | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   569    0   536  100    33    842     51 --:--:-- --:--:-- --:--:--   894
+{
+  "success": true,
+  "data": {
+    "credit": 1500,
+    "jackpot": 0,
+    "free_spin": 0,
+    "free_num": 0,
+    "scaler": 0,
+    "num_line": -20,
+    "bet_amount": 500,
+    "pull": {
+      "WinAmount": 0,
+      "FreeSpin": 0,
+      "WildFixedIcons": [],
+      "HasJackpot": false,
+      "HasScatter": false,
+      "WildColumIcon": "",
+      "ScatterPrize": 0,
+      "SlotIcons": [
+        "icon10",
+        "icon7",
+        "icon8",
+        "icon9",
+        "icon5",
+        "icon3",
+        "scatter",
+        "icon3",
+        "icon9",
+        "icon7",
+        "icon5",
+        "icon6",
+        "icon3",
+        "icon1",
+        "icon10"
+      ],
+      "ActiveIcons": [],
+      "ActiveLines": []
+    },
+    "response": "I'm going to have some bouncer trolls bounce you right out of this casino!"
+  },
+  "message": "Spin success"
+}

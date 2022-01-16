@@ -1,0 +1,108 @@
+Howdy howdy!  Mind helping me with this homew- er, challenge?
+Someone ran nmap -oG on a big network and produced this bigscan.gnmap file.
+The quizme program has the questions and hints and, incidentally,
+has NOTHING to do with an Elf University assignment. Thanks!
+
+Answer all the questions in the quizme executable:
+- What port does 34.76.1.22 have open?
+- What port does 34.77.207.226 have open?
+- How many hosts appear "Up" in the scan?
+- How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
+- How many hosts with status Up have no (detected) open TCP ports?
+- What's the greatest number of TCP ports any one host has open?
+
+Check out bigscan.gnmap and type quizme to answer each question.
+
+###
+# What port does 34.76.1.22 have open?
+###
+elf@0227bf6380ca:~$ grep "34.76.1.22" bigscan.gnmap 
+Host: 34.76.1.22 ()     Status: Up
+Host: 34.76.1.22 ()     Ports: 62078/open/tcp//iphone-sync///      Ignored State: closed (999)
+elf@3a26e5a3624b:~$ quizme
+What port does 34.76.1.22 have open?
+Please enter your answer or press h for a hint: 62078
+That's correct!
+We used this as a solution:
+grep 34.76.1.22 bigscan.gnmap
+This looks for "34.76.1.22" in the bigscan.gnmap file and shows us every place where it shows up.  In the results, we see:
+  62078/open/tcp//iphone-sync///
+This tells us port TCP 62078 was found open by nmap.
+You have 5 challenges left.
+
+##
+# What port does 34.77.207.226 have open?
+##
+elf@3a26e5a3624b:~$ grep "34.77.207.226" bigscan.gnmap 
+Host: 34.77.207.226 ()     Status: Up
+Host: 34.77.207.226 ()     Ports: 8080/open/tcp//http-proxy///      Ignored State: filtered (999)
+elf@3a26e5a3624b:~$ quizme
+What port does 34.77.207.226 have open?
+Please enter your answer or press h for a hint: 8080
+That's correct!
+We used this as a solution:
+grep 34.77.207.226 bigscan.gnmap
+Like the previous challenge, this searches the nmap output file for a specific IP address.  In the output, we see TCP port 8080 is open:
+  8080/open/tcp//http-proxy///
+You have 4 challenges left.
+
+##
+# How many hosts appear "Up" in the scan?
+##
+elf@3a26e5a3624b:~$ tail -n 1 bigscan.gnmap 
+# Nmap done at Fri Jul 26 12:4:23 -- 26054 IP addresses (26054 hosts up) scanned in 431.78 seconds
+elf@3a26e5a3624b:~$ quizme
+How many hosts appear "Up" in the scan?
+Please enter your answer or press h for a hint: 26054
+That's correct!
+We used this as a solution:
+grep Up bigscan.gnmap | wc -l
+Running the grep part of the command returns every line with "Up" in it, and wc counts the bytes, characters, words, and lines that come out of grep. Using "-l" only shows lines.
+You have 3 challenges left.
+
+##
+# How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
+##
+elf@3a26e5a3624b:~$ grep -e "Ports:.*\?80\|8080\|443.*\?I" bigscan.gnmap | wc -l
+14372
+elf@3a26e5a3624b:~$ quizme
+How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
+Please enter your answer or press h for a hint: 14372
+That's correct!
+We used this as a solution:
+grep -E "(80|443|8080)/open" bigscan.gnmap | wc -l
+Using "-E" tells grep we"re giving it a regular expression (regex).  In this case, that regex says, "I want lines that have 8080/open, 443/open, or 80/open."
+  If you want to be MORE correct, you might use "(\s8080|\s443|\s80)/open" to ensure you don't snag ports like 50080, but there weren't any in this file.
+You have 2 challenges left.
+
+##
+# How many hosts with status Up have no (detected) open TCP ports?
+##
+elf@3a26e5a3624b:~$ grep "Status: Up" bigscan.gnmap | cut -d " " -f 2 > host_up
+elf@3a26e5a3624b:~$ grep "Ports: " bigscan.gnmap | cut -d " " -f 2 > host_ports
+elf@3a26e5a3624b:~$ echo $((`cat host_up | wc -l` - `cat host_ports | wc -l`))
+402
+elf@3a26e5a3624b:~$ quizme
+How many hosts with status Up have no (detected) open TCP ports?
+Please enter your answer or press h for a hint: 402
+That's correct!
+We used this as a solution:
+echo $((`grep Up bigscan.gnmap | wc -l` - `grep Ports bigscan.gnmap | wc -l`))
+Our solution is a little fancy, but the crux is this: use one grep|wc command to count how many hosts are "Up", and use another to count how many have "Ports" open.
+You have 1 challenge left.
+
+##
+# What's the greatest number of TCP ports any one host has open?
+##
+elf@3a26e5a3624b:~$ grep -Em1 "^.{$(wc -L <bigscan.gnmap)}\$" bigscan.gnmap 
+Host: 34.77.152.226 ()     Ports: 22/open/tcp//ssh///, 25/open/tcp//smtp///, 80/open/tcp//http///, 110/open/tcp//pop3///, 135/open/tcp//msrpc///, 137/open/tcp//netbios-ns///, 139/open/tcp//netbios-ssn///, 143/open/tcp//imap///, 445/open/tcp//microsoft-ds///, 993/open/tcp//imaps///, 995/open/tcp//pop3s///, 3389/open/tcp//ms-wbt-server///      Ignored State: closed (988)
+elf@3a26e5a3624b:~$ quizme
+What's the greatest number of TCP ports any one host has open?
+Please enter your answer or press h for a hint: 12
+That's correct!
+We used this as a solution:
+grep -E "(open.*){12,}" bigscan.gnmap | wc -l && grep -E "(open.*){13,}" bigscan.gnmap | wc -l
+In our solution, we count how many lines have "open" in them a number of times.  We get a few for 12 and none for 13.
+One crafty tester employed the mighty powers of awk like this:
+  awk 'BEGIN {print}{print gsub(/open/,"") ""}' bigscan.gnmap | sort -nr | head -1
+You've done it!

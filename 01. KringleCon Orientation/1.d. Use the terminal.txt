@@ -1,0 +1,18 @@
+Enter the answer here
+
+> answer
+
+Your answer: answer
+
+Your answer is correct!
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Welcome to the first terminal challenge!
+
+This one is intentionally simple. All we need you to do is:
+
+- Click in the upper pane of this terminal
+- Type answer and press Enter
+
+elf@fd25309bce3c:~$

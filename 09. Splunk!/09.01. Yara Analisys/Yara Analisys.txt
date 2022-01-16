@@ -1,0 +1,181 @@
+HELP!!!
+
+This critical application is supposed to tell us the sweetness levels of our candy
+manufacturing output (among other important things), but I can't get it to run.
+
+It keeps saying something something yara. Can you take a look and see if you
+can help get this application to bypass Sparkle Redberry's Yara scanner?
+
+If we can identify the rule that is triggering, we might be able change the program
+to bypass the scanner.
+
+We have some tools on the system that might help us get this application going:
+vim, emacs, nano, yara, and xxd
+
+The children will be very disappointed if their candy won't even cause a single cavity.
+
+snowball2@2b442252ab9b:~$ ls
+the_critical_elf_app  yara_rules
+snowball2@2b442252ab9b:~$ file the_critical_elf_app 
+the_critical_elf_app: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=7ebba7022fa2ed1603350408701ad0dfe1679696, for GNU/Linux 3.2.0, not stripped
+snowball2@2b442252ab9b:~$ ./the_critical_elf_app 
+yara_rule_135 ./the_critical_elf_app
+snowball2@2b442252ab9b:~$  cat yara_rules/rules.yar  | grep "yara_rule_135 {" -A 11
+rule yara_rule_135 {
+   meta:
+      description = "binaries - file Sugar_in_the_machinery"
+      author = "Sparkle Redberry"
+      reference = "North Pole Malware Research Lab"
+      date = "1955-04-21"
+      hash = "19ecaadb2159b566c39c999b0f860b4d8fc2824eb648e275f57a6dbceaf9b488"
+   strings:
+      $s = "candycane"
+   condition:
+      $s
+}
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep candy
+00002000: 0100 0200 0000 0000 6361 6e64 7963 616e  ........candycan
+000037d0: 6564 6174 6100 6361 6e64 795f 6772 6162  edata.candy_grab
+
+##
+# In VIM
+##
+00002000: 0100 0200 0000 0000 6361 6e64 7963 616e  ........candycan
+00002010: 6500 6e61 7567 6874 7920 7374 7269 6e67  e.naughty string
+--> TO -->
+00002000: 0100 0200 0000 0000 6369 6e64 7963 616e  ........cindycan
+00002010: 6500 6e61 7567 6874 7920 7374 7269 6e67  e.naughty string
+
+snowball2@ad2b9bc1bb62:~$ ./the_critical_elf_app
+yara_rule_1056 ./the_critical_elf_app
+snowball2@ad2b9bc1bb62:~$ grep "yara_rule_1056" yara_rules/rules.yar -A 12
+rule yara_rule_1056 {
+   meta: 
+        description = "binaries - file frosty.exe"
+        author = "Sparkle Redberry"
+        reference = "North Pole Malware Research Lab"
+        date = "1955-04-21"
+        hash = "b9b95f671e3d54318b3fd4db1ba3b813325fcef462070da163193d7acb5fcd03"
+    strings:
+        $s1 = {6c 6962 632e 736f 2e36}
+        $hs2 = {726f 6772 616d 2121}
+    condition:
+        all of them
+}
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "2e36" -A 1 -B 1
+00000450: 0000 0000 0000 0000 006c 6962 632e 736f  .........libc.so
+00000460: 2e36 005f 5f63 7861 5f66 696e 616c 697a  .6.__cxa_finaliz
+00000470: 6500 5f5f 6c69 6263 5f73 7461 7274 5f6d  e.__libc_start_m
+# Doesn't feel safe to alter "libc" :)
+
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "726f 6772" -A 1 -B 1
+00002040: 2065 7865 6375 7469 6f6e 206f 6620 7468   execution of th
+00002050: 6973 2070 726f 6772 616d 2121 0000 0000  is program!!....
+00002060: 486_f 6c69 6461 7948 6163 6b43 6861 6c6c  HolidayHackChall
+
+00002040: 2065 7865 6375 7469 6f6e 206f 6620 7468   execution of th
+00002050: 6973 2070 716f 6772 616d 2121 0000 0000  is pqogram!!....
+00002060: 486f 6c69 6461 7948 6163 6b43 6861 6c6c  HolidayHackChall
+
+snowball2@ad2b9bc1bb62:~$ ./the_critical_elf_app
+yara_rule_1732 ./the_critical_elf_app
+
+snowball2@ad2b9bc1bb62:~$ grep "yara_rule_1732" yara_rules/rules.yar -A 31
+rule yara_rule_1732 {
+   meta:
+      description = "binaries - alwayz_winter.exe"
+      author = "Santa"
+      reference = "North Pole Malware Research Lab"
+      date = "1955-04-22"
+      hash = "c1e31a539898aab18f483d9e7b3c698ea45799e78bddc919a7dbebb1b40193a8"
+   strings:
+      $s1 = "This is critical for the execution of this program!!" fullword ascii
+      $s2 = "__frame_dummy_init_array_entry" fullword ascii
+      $s3 = ".note.gnu.property" fullword ascii
+      $s4 = ".eh_frame_hdr" fullword ascii
+      $s5 = "__FRAME_END__" fullword ascii
+      $s6 = "__GNU_EH_FRAME_HDR" fullword ascii
+      $s7 = "frame_dummy" fullword ascii
+      $s8 = ".note.gnu.build-id" fullword ascii
+      $s9 = "completed.8060" fullword ascii
+      $s10 = "_IO_stdin_used" fullword ascii
+      $s11 = ".note.ABI-tag" fullword ascii
+      $s12 = "naughty string" fullword ascii
+      $s13 = "dastardly string" fullword ascii
+      $s14 = "__do_global_dtors_aux_fini_array_entry" fullword ascii
+      $s15 = "__libc_start_main@@GLIBC_2.2.5" fullword ascii
+      $s16 = "GLIBC_2.2.5" fullword ascii
+      $s17 = "its_a_holly_jolly_variable" fullword ascii
+      $s18 = "__cxa_finalize" fullword ascii
+      $s19 = "HolidayHackChallenge{NotReallyAFlag}" fullword ascii
+      $s20 = "__libc_csu_init" fullword ascii
+   condition:
+      uint32(1) == 0x02464c45 and filesize < 50KB and
+      10 of them
+}
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "AF" -A 1 -B 1
+00002060: 486f 6c69 6461 7948 6163 6b43 6861 6c6c  HolidayHackChall
+00002070: 656e 6765 7b4e 6f74 5265 616c 6c79 4146  enge{NotReallyAF
+00002080: 6c61 677d 0064 6173 7461 7264 6c79 2073  lag}.dastardly s
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "jolly" -A 1 -B 1
+00003880: 6900 6d61 696e 0069 7473 5f61 5f68 6f6c  i.main.its_a_hol
+00003890: 6c79 5f6a 6f6c 6c79 5f76 6172 6961 626c  ly_jolly_variabl
+000038a0: 6500 5f5f 544d 435f 454e 445f 5f00 5f49  e.__TMC_END__._I
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "dast" -A 1 -B 1
+00002070: 656e 6765 7b4e 6f74 5265 616c 6c79 4146  enge{NotReallyAF
+00002080: 6c61 677d 0064 6173 7461 7264 6c79 2073  lag}.dastardly s
+00002090: 7472 696e 6700 0000 011b 033b 3c00 0000  tring......;<...
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "nau" -A 1 -B 1
+00002000: 0100 0200 0000 0000 6369 6e64 7963 616e  ........cindycan
+00002010: 6500 6e61 7567 6874 7920 7374 7269 6e67  e.naughty string
+00002020: 0000 0000 0000 0000 5468 6973 2069 7320  ........This is 
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "dummy" -A 1 -B 1
+000036f0: 5f61 7272 6179 5f65 6e74 7279 0066 7261  _array_entry.fra
+00003700: 6d65 5f64 756d 6d79 005f 5f66 7261 6d65  me_dummy.__frame
+00003710: 5f64 756d 6d79 5f69 6e69 745f 6172 7261  _dummy_init_arra
+00003720: 795f 656e 7472 7900 7468 655f 6372 6974  y_entry.the_crit
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "property" -A 1 -B 1
+00003900: 696e 7465 7270 002e 6e6f 7465 2e67 6e75  interp..note.gnu
+00003910: 2e70 726f 7065 7274 7900 2e6e 6f74 652e  .property..note.
+00003920: 676e 752e 6275 696c 642d 6964 002e 6e6f  gnu.build-id..no
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "hdr" -A 1 -B 1
+00003990: 7465 7874 002e 6669 6e69 002e 726f 6461  text..fini..roda
+000039a0: 7461 002e 6568 5f66 7261 6d65 5f68 6472  ta..eh_frame_hdr
+000039b0: 002e 6568 5f66 7261 6d65 002e 696e 6974  ..eh_frame..init
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "FRAME_END" -A 1 -B 1
+00003730: 6963 616c 5f65 6c66 5f61 7070 2e63 005f  ical_elf_app.c._
+00003740: 5f46 5241 4d45 5f45 4e44 5f5f 005f 5f69  _FRAME_END__.__i
+00003750: 6e69 745f 6172 7261 795f 656e 6400 5f44  nit_array_end._D
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "HDR" -A 1 -B 1
+00003770: 7261 795f 7374 6172 7400 5f5f 474e 555f  ray_start.__GNU_
+00003780: 4548 5f46 5241 4d45 5f48 4452 005f 474c  EH_FRAME_HDR._GL
+00003790: 4f42 414c 5f4f 4646 5345 545f 5441 424c  OBAL_OFFSET_TABL
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "dummy" -A 1 -B 1
+000036f0: 5f61 7272 6179 5f65 6e74 7279 0066 7261  _array_entry.fra
+00003700: 6d65 5f64 756d 6d79 005f 5f66 7261 6d65  me_dummy.__frame
+00003710: 5f64 756d 6d79 5f69 6e69 745f 6172 7261  _dummy_init_arra
+00003720: 795f 656e 7472 7900 7468 655f 6372 6974  y_entry.the_crit
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "build" -A 1 -B 1
+00003910: 2e70 726f 7065 7274 7900 2e6e 6f74 652e  .property..note.
+00003920: 676e 752e 6275 696c 642d 6964 002e 6e6f  gnu.build-id..no
+00003930: 7465 2e41 4249 2d74 6167 002e 676e 752e  te.ABI-tag..gnu.
+snowball2@ad2b9bc1bb62:~$ xxd the_critical_elf_app | grep "8060" -A 1 -B 1
+000036c0: 7273 5f61 7578 0063 6f6d 706c 6574 6564  rs_aux.completed
+000036d0: 2e38 3036 3000 5f5f 646f 5f67 6c6f 6261  .8060.__do_globa
+000036e0: 6c5f 6474 6f72 735f 6175 785f 6669 6e69  l_dtors_aux_fini
+snowball2@da9a67dbeb7a:~$ xxd the_critical_elf_app | grep "stdin" -A 1 -B 1
+00003830: 5f5f 005f 5f64 736f 5f68 616e 646c 6500  __.__dso_handle.
+00003840: 5f49 4f5f 7374 6469 6e5f 7573 6564 005f  _IO_stdin_used._
+00003850: 5f6c 6962 635f 6373 755f 696e 6974 005f  _libc_csu_init._
+snowball2@da9a67dbeb7a:~$ xxd the_critical_elf_app | grep "ABI" -A 1 -B 1
+00003920: 676e 752e 6275 696c 642d 6964 002e 6e6f  gnu.build-id..no
+00003930: 7465 2e41 4249 2d74 6167 002e 676e 752e  te.ABI-tag..gnu.
+00003940: 6861 7368 002e 6479 6e73 796d 002e 6479  hash..dynsym..dy
+
+snowball2@da9a67dbeb7a:~$ vim the_critical_elf_app 
+snowball2@94dc8af0fac8:~$ ./the_critical_elf_app 
+Machine Running.. 
+Toy Levels: Very Merry, Terry
+Naughty/Nice Blockchain Assessment: Untampered
+Candy Sweetness Gauge: Exceedingly Sugarlicious
+Elf Jolliness Quotient: 4a6f6c6c7920456e6f7567682c204f76657274696d6520417070726f766564

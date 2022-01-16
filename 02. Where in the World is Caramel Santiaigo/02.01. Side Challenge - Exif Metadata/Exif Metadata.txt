@@ -1,0 +1,21 @@
+HELP! That wily Jack Frost modified one of our naughty/nice records, and right 
+before Christmas! Can you help us figure out which one? We've installed exiftool
+for your convenience!
+
+Filename (including .docx extension) > 2021-12-21.docx
+Your answer: 2021-12-21.docx
+
+Checking........
+Wow, that's right! We couldn't have done it without your help! Congratulations!
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+elf@1f079d1ce670:~$ ls
+2021-12-01.docx  2021-12-06.docx  2021-12-11.docx  2021-12-16.docx  2021-12-21.docx
+2021-12-02.docx  2021-12-07.docx  2021-12-12.docx  2021-12-17.docx  2021-12-22.docx
+2021-12-03.docx  2021-12-08.docx  2021-12-13.docx  2021-12-18.docx  2021-12-23.docx
+2021-12-04.docx  2021-12-09.docx  2021-12-14.docx  2021-12-19.docx  2021-12-24.docx
+2021-12-05.docx  2021-12-10.docx  2021-12-15.docx  2021-12-20.docx  2021-12-25.docx
+elf@a8c856b363a8:~$ for f in $(ls -1);do exiftool $f | grep -v "Santa Claus" | grep "Last Modified By" && echo $f; done
+Last Modified By                : Jack Frost
+2021-12-21.docx

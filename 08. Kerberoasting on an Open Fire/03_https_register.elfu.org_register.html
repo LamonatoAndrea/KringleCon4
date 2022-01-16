@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="css/MaterialIcons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+      #rc-anchor-container {
+        /*margin-bottom: 50%;*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="red darken-1">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img height="60px" width="auto" src="images/elfu.png"/></a>
+        <span style="font-family: Helvetica; color: white; font-size: 45px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Elf University</span>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12">&nbsp;</div>
+      </div>
+
+      
+      <!-- Login Form -->
+      <div id="login" class="row">
+
+        <div class="col s12 grey lighten-5 z-depth-2">
+          <h3 class="center">Student Registration</h3>
+          <h5 class="center">New ElfU Domain Student Registration Portal</h5>
+          <h6 class="center">All new elf students must register for a new account to be registered to the domain. This account will give ElfU students access to the internal domain and domain services.</h6>
+          <form method="POST" action="/register">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="ImFjNGIyZmI0ZjUzZTRlNTU5MzAwNzFmODYzZDQ2YzQyZDk1NTZlMDAi.Yd6ZaQ.6yntq9kTx7TemvJFjhgdF-hgq-Y">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">person</i>
+              <input minlength="3" id="first" type="text" class="validate" name="first" required>
+              <label for="first">First Name</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">perm_identity</i>
+              <input minlength="3" id="last" type="text" class="validate" name="last" required>
+              <label for="last">Last Name</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mail</i>
+              <input id="email" type="email" class="validate" name="email" required>
+              <label for="email">Email</label>
+              <div class="input-field col s12 center"><i>(Please do not spam this form and please be patient as it could take up to a minute to process your request.) <br> ( A real domain name must be used in email.)</i></div>
+            </div>
+            <div class="input-field col s4 center"></div>
+            <div class="input-field col s4 center">
+              
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+<div class="g-recaptcha" data-sitekey="6Lf3Vs8ZAAAAAJ97vJA--dUqCpXi4y6j__LwElP0"></div>
+
+            </div>
+            <div class="input-field col s4 center"></div>
+            <div class="input-field col s12 center" style="text-align: center;">
+              <button class="btn white black-text waves-effect z-depth-1 y-depth-1 center" type="submit" value="submit">Submit</button>
+            </div>
+            <div class="col s12">
+              <div class="center" style="font-size: 12px;">@ 2021 Elf University - All Rights Reserved</div>
+            </div>
+            <div class="col s12">&nbsp;</div>
+            <!-- Remember the groups battling to win the karaoke contest earleir this year? I think they were rocks4socks, cookiepella, asnow2021, 
+            v0calprezents, Hexatonics, and reindeers4fears. Wow, good times! -->
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+        $('.modal').modal();
+      });
+    </script>
+  </body>
+</html>
