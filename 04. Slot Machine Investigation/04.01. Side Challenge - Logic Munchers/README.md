@@ -8,7 +8,7 @@
 **Boolean Logic** - *Noel Boetie*: “There are lots of special symbols for logic and set notation. [This one](http://notes.imt-decal.org/sets/cheat-sheet.html) covers AND, NOT, and OR at the bottom.”  
 
 ### 4.3. Solution
-Analyzing the code of chompy.js it is possible to identify the function `moveit` that moves Chomper , the player’s avatar, the Trollogs , the bad guys, and identify their collisions, eventually calling the die function on our poor chompy Chomper.
+Analyzing the code of `chompy.js` it is possible to identify the function `moveit` that moves Chomper, the player’s avatar, the Trollogs, the bad guys, and identify their collisions, eventually calling the `die` function on our poor chompy Chomper.
 When a Trollog moves onto a square, the square’s value changes so their movements are to be preserved in order to “munch” the maximum amount of squares.
 A quick patch of the `moveit` function in the context of the game allows to prevent our Chomper from dying, and thus win the game easily:
 ```js
