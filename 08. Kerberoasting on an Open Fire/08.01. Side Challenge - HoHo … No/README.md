@@ -2,7 +2,8 @@
 ## 8. [Kerberoasting on an Open Fire](/08.%20Kerberoasting%20on%20an%20Open%20Fire/README.md)
 
 ### 8.1. Side Challenge - HoHo … No
-The aim of this challenge is to customize Fail2ban so to automatically block all IPs generating more than 10 failures/hour. The challenge is successful when a filter, a jail and an action are properly set up and working.
+The aim of this challenge is to customize `Fail2ban` so to automatically block all IPs generating more than 10 failures/hour. The challenge is successful when a filter, a jail and an action are properly set up and working.  
+
 Using grep on the file `/var/log/hohono.log` it is possible to find 4 types of failure log messages:
 ```bash
 2021-12-19 23:40:08 Failed login from 16.62.11.108 for shinny
