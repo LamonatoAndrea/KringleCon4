@@ -103,7 +103,7 @@ You have 2 challenges left.
 Answer is: `14372`
 
 #### 3.1.1.4. How many hosts with status Up have no (detected) open TCP ports?
-I did two temporary files, one with all the IP addresses of hosts with "Status: Up" and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using bash: 
+I created two temporary files, one with all the IP addresses of hosts with "Status: Up" and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using bash: 
 ```bash
 elf@3a26e5a3624b:~$ grep "Status: Up" bigscan.gnmap | cut -d " " -f 2 > host_up
 elf@3a26e5a3624b:~$ grep "Ports: " bigscan.gnmap | cut -d " " -f 2 > host_ports
