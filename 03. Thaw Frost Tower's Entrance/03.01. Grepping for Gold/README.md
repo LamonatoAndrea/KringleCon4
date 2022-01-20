@@ -29,7 +29,7 @@ Check out bigscan.gnmap and type quizme to answer each question.
 Below the full output.
 
 #### 3.1.1.0. What port does 34.76.1.22 have open?
-I used grep to search the host and checked the output:
+I used `grep` to search the host and checked the output:
 ```bash
 elf@0227bf6380ca:~$ grep "34.76.1.22" bigscan.gnmap 
 Host: 34.76.1.22 ()     Status: Up
@@ -49,7 +49,7 @@ You have 5 challenges left.
 Answer is: `62078`
 
 #### 3.1.1.1. What port does 34.77.207.226 have open?
-I used grep to search the host and checked the output:
+I used `grep` to search the host and checked the output:
 ```bash
 elf@3a26e5a3624b:~$ grep "34.77.207.226" bigscan.gnmap 
 Host: 34.77.207.226 ()     Status: Up
@@ -68,7 +68,7 @@ You have 4 challenges left.
 Answer is: `8080`
 
 #### 3.1.1.2. How many hosts appear "Up" in the scan?
-The last line of a nmap scan file is generally the summary of hosts scanned, so `tail` did the trick:
+The last line of a `nmap` scan file is generally the summary of hosts scanned, so `tail` did the trick:
 ```bash
 elf@3a26e5a3624b:~$ tail -n 1 bigscan.gnmap 
 ## Nmap done at Fri Jul 26 12:4:23 -- 26054 IP addresses (26054 hosts up) scanned in 431.78 seconds
@@ -85,7 +85,7 @@ You have 3 challenges left.
 Answer is: `26054`
 
 #### 3.1.1.3. How many hosts have a web port open?  (Let's just use TCP ports 80, 443, and 8080)
-I used grep to search for a regex containing target ports:
+I used `grep` to search for a regex containing target ports:
 ```bash
 elf@3a26e5a3624b:~$ grep -e "Ports:.*\?80\|8080\|443.*\?I" bigscan.gnmap | wc -l
 14372
@@ -103,7 +103,7 @@ You have 2 challenges left.
 Answer is: `14372`
 
 #### 3.1.1.4. How many hosts with status Up have no (detected) open TCP ports?
-I created two temporary files, one with all the IP addresses of hosts with "Status: Up" and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using bash: 
+I created two temporary files, one with all the IP addresses of hosts with `Status: Up` and one for hosts that shows at least one port. I then used `wc` to count lines in each file and did a subtraction using `bash`: 
 ```bash
 elf@3a26e5a3624b:~$ grep "Status: Up" bigscan.gnmap | cut -d " " -f 2 > host_up
 elf@3a26e5a3624b:~$ grep "Ports: " bigscan.gnmap | cut -d " " -f 2 > host_ports
