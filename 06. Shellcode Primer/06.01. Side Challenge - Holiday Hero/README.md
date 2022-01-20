@@ -5,7 +5,7 @@
 The objective is to get the Santa Sleigh up and flying by smashing those notes on the keyboard!
 Unfortunately it’s a lonely place there and nobody wants to play with me…
 
-That made me so sad I had to give myself a single_player_cookie by the name of HOHOHO:  
+That made me so sad I had to give myself a `single_player_cookie` by the name of `HOHOHO`:  
 ![hohoho](imgs/HOHOHO_cookie.PNG)
 
 I found myself still in lonely land, so I had to explicitly tell my imaginary friend to join:  
