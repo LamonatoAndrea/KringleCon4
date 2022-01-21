@@ -19,8 +19,8 @@ module tone_generator (input clk, input rst, input [31:0] freq, output wave_out)
     real floor = $floor(clk_speed/freq*100)/2 - 1;
     real ceil = $ceil(clk_speed/freq*100)/2 - 1;
     real precise = $rtoi(clk_speed/freq*100)/2 - 1;
-    real freq_floor = floor - precise;
-    real freq_ceil = precise - ceil;
+    real freq_floor = precise - floor;
+    real freq_ceil = ceil - precise;
     real counter;
 
     reg waver;    
@@ -49,7 +49,7 @@ module tone_generator (input clk, input rst, input [31:0] freq, output wave_out)
                                         end
                                     else
                                         begin 
-                                            counter <= ceil;
+                                            counter <= floor;
                                         end
                                 end
                             waver <= ~waver;
