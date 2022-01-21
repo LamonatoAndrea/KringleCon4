@@ -167,7 +167,7 @@ elf.moveUp(100)
 
 #### 12.2. Level 8 @ KringleCon3
 This year I didn’t come up with any weird solution for this challenge but you can still insult [my Level 8 solution](https://github.com/LamonatoAndrea/KringleCon3/blob/main/04.%20Operate%20the%20Santavator/README.md#418-level-8) from last year.  
-![meme](imgs/meme.png)
+![meme](imgs/meme.png) https://www.secmeme.com/2013/02/the-internet-is-forever.html
 
 ---
 ## [2. Where in the World is Caramel Santiaigo?](README.md)
