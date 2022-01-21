@@ -63,7 +63,7 @@ module tone_generator (input clk, input rst, input [31:0] freq, output wave_out)
 endmodule
 ```
 
-This code doesn’t always work (or basically doesn't work most of the times :) ), but it is enough to pass the challenge with an input frequency of `1504.08`:
+This code doesn’t always work (or basically doesn't work most of the times `:)` ), but it is enough to pass the challenge with an input frequency of `1504.08`:
 ```bash
 Sending code for analysis...
 Verilog parsed cleanly...
