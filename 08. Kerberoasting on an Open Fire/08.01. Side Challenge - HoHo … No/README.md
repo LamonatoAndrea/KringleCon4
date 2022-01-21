@@ -83,6 +83,8 @@ You incorrectly added 0 benign IPs to the naughty list
 This challenge actually unlocks the objective “8) Kerberoasting on an Open Fire”.
 
 ---
+## Back to main chapter 8. [Kerberoasting on an Open Fire](/08.%20Kerberoasting%20on%20an%20Open%20Fire/README.md)
+---
 ## 9. [Splunk!](/09.%20Splunk!/README.md)
 ### 9.1. [Side Challenge - Yara Analysis](/09.%20Splunk!/09.01.%20Yara%20Analisys/README.md)
 ## 10. [Now Hiring!](/10.%20Now%20Hiring!/README.md)
@@ -112,4 +114,3 @@ This challenge actually unlocks the objective “8) Kerberoasting on an Open Fir
 ## 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)
 ### 6.1. [Side Challenge - Holiday Hero](/06.%20Shellcode%20Primer/06.01.%20Side%20Challenge%20-%20Holiday%20Hero/README.md)
 ## 7. [Printer Exploitation](/07.%20Printer%20Exploitation/README.md)
-## 8. [Kerberoasting on an Open Fire](/08.%20Kerberoasting%20on%20an%20Open%20Fire/README.md)

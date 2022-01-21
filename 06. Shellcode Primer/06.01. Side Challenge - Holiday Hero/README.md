@@ -18,6 +18,8 @@ Finally me and my [Armadillo](https://it.wikipedia.org/wiki/Armadillo_(Zerocalca
 I don’t know why I made this solution so much on the weird side, but I hope you’ll have fun reading it :)
 
 ---
+## Back to main chapter 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)
+---
 ## 7. [Printer Exploitation](/07.%20Printer%20Exploitation/README.md)
 ## 8. [Kerberoasting on an Open Fire](/08.%20Kerberoasting%20on%20an%20Open%20Fire/README.md)
 ### 8.1. [Side Challenge - HoHo … No](/08.%20Kerberoasting%20on%20an%20Open%20Fire/08.01.%20Side%20Challenge%20-%20HoHo%20…%20No/README.md)
@@ -47,4 +49,3 @@ I don’t know why I made this solution so much on the weird side, but I hope yo
 ### 4.1. [Side Challenge - Logic Munchers](/04.%20Slot%20Machine%20Investigation/04.01.%20Side%20Challenge%20-%20Logic%20Munchers/README.md)
 ## 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)
 ### 5.1. [Side Challenge - IPv6 Sandbox](/05.%20Strange%20USB%20Device/05.01.%20Side%20Challenge%20-%20IPv6%20Sandbox/README.md)
-## 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)

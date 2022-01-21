@@ -141,6 +141,8 @@ You've done it!
 Answer is: `12`
 
 ---
+## Back to main challenge 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
+---
 ## 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
 ### 4.1. [Side Challenge - Logic Munchers](/04.%20Slot%20Machine%20Investigation/04.01.%20Side%20Challenge%20-%20Logic%20Munchers/README.md)
 ## 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)
@@ -170,4 +172,3 @@ Answer is: `12`
 ## 1. [KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
 ## 2. [Where in the World is Caramel Santiaigo?](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/README.md)
 ### 2.1. [Side Challenge - Exif Metadata](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata/README.md)
-## 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)

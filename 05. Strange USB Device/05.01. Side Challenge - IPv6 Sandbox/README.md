@@ -145,6 +145,8 @@ CANDY STRIPER REENGAGED. THANK YOU!
 ```
 
 ---
+## Back to main challenge 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)
+---
 ## 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)
 ### 6.1. [Side Challenge - Holiday Hero](/06.%20Shellcode%20Primer/06.01.%20Side%20Challenge%20-%20Holiday%20Hero/README.md)
 ## 7. [Printer Exploitation](/07.%20Printer%20Exploitation/README.md)
@@ -174,4 +176,3 @@ CANDY STRIPER REENGAGED. THANK YOU!
 ### 3.1. [Side Challenge - Grepping for Gold](/03.%20Thaw%20Frost%20Tower's%20Entrance/03.01.%20Grepping%20for%20Gold/README.md)
 ## 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
 ### 4.1. [Side Challenge - Logic Munchers](/04.%20Slot%20Machine%20Investigation/04.01.%20Side%20Challenge%20-%20Logic%20Munchers/README.md)
-## 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)

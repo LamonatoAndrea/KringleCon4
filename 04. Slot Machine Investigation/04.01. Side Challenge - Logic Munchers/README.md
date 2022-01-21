@@ -48,7 +48,8 @@ Instead of letting the player die, this function just shows a message in the con
 If I will find the time to work on it, I would like to make chomper play without human interaction... Stay tuned and let's see how it goes :)
 
 ---
-### 4.1. [Side Challenge - Logic Munchers](/04.%20Slot%20Machine%20Investigation/04.01.%20Side%20Challenge%20-%20Logic%20Munchers/README.md)
+## Back to main challenge 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
+---
 ## 5. [Strange USB Device](/05.%20Strange%20USB%20Device/README.md)
 ### 5.1. [Side Challenge - IPv6 Sandbox](/05.%20Strange%20USB%20Device/05.01.%20Side%20Challenge%20-%20IPv6%20Sandbox/README.md)
 ## 6. [Shellcode Primer](/06.%20Shellcode%20Primer/README.md)
@@ -78,4 +79,3 @@ If I will find the time to work on it, I would like to make chomper play without
 ### 2.1. [Side Challenge - Exif Metadata](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/02.01.%20Side%20Challenge%20-%20Exif%20Metadata/README.md)
 ## 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 ### 3.1. [Side Challenge - Grepping for Gold](/03.%20Thaw%20Frost%20Tower's%20Entrance/03.01.%20Grepping%20for%20Gold/README.md)
-## 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)

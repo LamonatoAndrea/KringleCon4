@@ -33,6 +33,8 @@ Wow, that's right! We couldn't have done it without your help! Congratulations!
 ```
 
 ---
+## Back to main challenge 2. [Where in the World is Caramel Santiaigo?](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/README.md)
+---
 ## 3. [Thaw Frost Tower's Entrance](/03.%20Thaw%20Frost%20Tower's%20Entrance/README.md)
 ### 3.1. [Side Challenge - Grepping for Gold](/03.%20Thaw%20Frost%20Tower's%20Entrance/03.01.%20Grepping%20for%20Gold/README.md)
 ## 4. [Slot Machine Investigation](/04.%20Slot%20Machine%20Investigation/README.md)
@@ -62,4 +64,3 @@ Wow, that's right! We couldn't have done it without your help! Congratulations!
 ---
 ## 0. [windovo\\thedead> whoami](/README.md)
 ## 1. [KringleCon Orientation](/01.%20KringleCon%20Orientation/README.md)
-## 2. [Where in the World is Caramel Santiaigo?](/02.%20Where%20in%20the%20World%20is%20Caramel%20Santiaigo/README.md)
